@@ -16,7 +16,13 @@ export class AppComponent {
             label: 'instruments',
             link: './instruments',
             index: 0
-        }
+        },
+
+        {
+          label: 'playlist',
+          link: './playlist',
+          index: 1
+      }
     ];
 }
 ngOnInit(): void {

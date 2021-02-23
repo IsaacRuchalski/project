@@ -7,9 +7,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { PlaylistComponent } from './playlist/playlist.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlaylistComponent
   ],
   imports: [
     BrowserModule,
