@@ -1,0 +1,84 @@
+{
+
+ 
+
+        "instruments" : [
+
+            {"id": 1,
+            "name": "violon",
+            "description": "Constitué de 71 éléments en bois collés ou assemblés les uns aux autres, il possède quatre cordes généralement accordées à la quinte que le violoniste frotte avec un archet ou pince avec l'index ou le pouce.",
+            "img": "img/frottees/violon.png",
+            "familleId": 1 
+            },
+
+            {"id": 2,
+            "name": "violoncelle",
+            "description": "Le violoncelle est un instrument à cordes frottées, pincées ou plus rarement frappées avec le bois de l'archet, de la famille des cordes frottées, qui compte aussi le violon, l'alto et la contrebasse.",
+            "img" : "img/frottees/violoncelle.png",
+            "familleId": 1
+            },
+
+            {"id": 3,
+                "name": "violon alto",
+                "description": "L'alto fait partie de la famille des instruments à cordes frottées. Il ressemble au violon, mais il est plus grand, plus épais, et plus grave.",
+                "img" : "img/frottees/alto.png",
+                "familleId": 1
+            },
+
+            {"id": 4,
+                "name": "contrebasse",
+                "description": "La contrebasse est un instrument grave de la famille des instruments à cordes. Avant l'octobasse, la contrebasse est le plus grand et l'un des plus graves instruments de cette famille.",
+                "img" : "img/frottees/contrebasse.png",
+                "familleId": 1
+            },
+
+            {"id": 5,
+                "name": "tagelharpa",
+                "description": "la talharpa (ou tagelharpa), ou la stråkharpa est une lyre à archet à quatre cordes originaire de Scandinavie, jouée depuis le moyen-âge.",
+                "img" : "img/frottees/tagelharpa.png",
+                "familleId": 1
+            },
+
+            {"id": 6,
+                "name": "vielle à roue",
+                "description": "La vielle à roue est un instrument à cordes, frottées par une roue en bois au lieu d'un archet. La roue est tournée avec une manivelle de la main droite, pendant que la main gauche du musicien joue la mélodie sur un clavier.",
+                "img" : "img/frottees/hurdy-gurdy.png",
+                "familleId": 1
+            },
+
+            {"id": 7,
+            
+                "name": "luth",
+                "description": "Le luth est un instrument à cordes pincées. Le terme désigne aussi de manière générale tout instrument ayant les cordes parallèles à un manche.",
+                "img": "img/pincees/luth.png",
+                "familleId": 2
+            },
+
+            {"id": 8,
+            
+                "name": "guitare",
+                "description": "La guitare est un instrument à cordes pincées. Les cordes sont disposées parallèlement à la table d'harmonie et au manche, généralement coupé de frettes, sur lesquelles on appuie les cordes, d'une main, pour produire des notes différentes.",
+                "img": "img/pincees/guitare.png",
+                "familleId": 2
+            }
+        ],
+
+
+        "familles   ": [
+
+            {"id": 1,
+            "name": "cordes frottées"
+            },
+            {"id": 2,
+            "name": "cordes pincées"
+            },
+
+            {"id": 3,
+                "name": "cordes frappées"
+            }
+        ]
+
+
+
+
+}
