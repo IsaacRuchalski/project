@@ -1,5 +1,21 @@
-mat-tab  {
 
-color: red;
-background-color: black;
+.mat-cell {
+
+    padding: 20px;
+
 }
+
+.mat-cell:nth-of-type(4) {
+
+    width: 10%;
+    
+}
+img {
+
+width: 120px;
+
+}
+
+table {
+    width: 100%;
+  }
