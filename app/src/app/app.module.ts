@@ -10,8 +10,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { PlaylistComponent } from './playlist/playlist.component';
 @NgModule({
   declarations: [
-    AppComponent,
-    PlaylistComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

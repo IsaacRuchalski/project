@@ -4,6 +4,7 @@ id: number;
 name: string;
 description: string;
 img: string;
-familleId: number;   
+familleId: number;
+origin: string;
 
 }
