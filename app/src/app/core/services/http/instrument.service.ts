@@ -10,9 +10,14 @@ export class InstrumentService {
 
 
   get(){
-
-
     return this.http.get<Instrument[]>("https://evening-brushlands-19063.herokuapp.com/instruments");
+  }
+
+  getByOrigin(origin: string){
+
+ 
+    return this.http.get<Instrument[]>("https://evening-brushlands-19063.herokuapp.com/instruments?origin="+encodeURIComponent(origin));
+
   }
 }
 

@@ -6,6 +6,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClient, HttpClientModule, HttpHeaders } from '@angular/common/http';
 import {MatTabsModule} from '@angular/material/tabs';
 import { InstrumentService } from './services/http/instrument.service';
+import { ShapeService } from './services/map/shape.service';
+import { PopupService } from './services/http/popup.service';
+
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [
@@ -23,7 +26,9 @@ import { InstrumentService } from './services/http/instrument.service';
   ],
   providers: [
 
-    InstrumentService
+    InstrumentService,
+    ShapeService,
+    PopupService
     
   ]
 })

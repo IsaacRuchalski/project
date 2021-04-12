@@ -19,8 +19,8 @@ export class AppComponent {
         },
 
         {
-          label: 'playlist',
-          link: './playlist',
+          label: 'map',
+          link: './map',
           index: 1
       }
     ];
