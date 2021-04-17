@@ -73,7 +73,7 @@ export class MapComponent implements AfterViewInit {
           this.instrumentService.getByOrigin(feature.properties.ADMIN).subscribe((instruments) => (this.instruments = instruments)),
           setTimeout(() => {
             layer.setPopupContent(this.popupService.makePopup(feature.properties.ADMIN, this.instruments));
-          }, 150);
+          }, 350);
         }
       }))
     });
