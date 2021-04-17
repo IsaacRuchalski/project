@@ -27,12 +27,12 @@ export class PopupService {
 
     html += "<style>";
     html += ".popupCustom .leaflet-popup-tip, .popupCustom .leaflet-popup-content-wrapper {background-color: #333333; color: #C2185B;}";
-    html += ".leaflet-popup-content-wrapper {border: 1px solid #C2185B;}";
+    html += ".leaflet-popup-content-wrapper {border: 1px solid #C2185B; width: 100%;}";
     html += ".leaflet-container a.leaflet-popup-close-button {color: #C2185B;}";
     html += "#grid-element a {color: #C2185B; font-size: 1.25em;}";
-    html += "img{ max-width: 60px;}";
-    html += "#grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 2fr)); width: 300px; gap: 10px; max-height: 250px; overflow-y: scroll;}";
-    html += "#grid-element { display: flex; flex-direction: column; align-items:center;}";
+    html += "img{ max-height: 75px;}";
+    html += "#grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 2fr)); width: 300px; gap: 10px; max-height: 250px; overflow-y: auto;}";
+    html += "#grid-element { display: flex; flex-direction: column; align-items:center; width: 100%; height: auto;}";
     html += "</style>";
     return html;
   }
