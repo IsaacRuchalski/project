@@ -1,27 +1,66 @@
 import {Injectable} from "@angular/core";
 import {FeatureGroup} from "leaflet";
-import {Observable} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
+import {timeout} from "rxjs/operators";
 import {Instrument} from "../../models/instrument";
 import {InstrumentService} from "./instrument.service";
 
 @Injectable({providedIn: "root"})
 export class PopupService {
   public instruments?: Instrument[];
+  public instruments$?: Observable<Instrument[]>;
+  public instrs: string[];
   public html: string = "";
-  constructor(private instrumentService : InstrumentService) {}
+  constructor(private instrumentService : InstrumentService) {
+    this.instrs = [];
+  }
 
-  makePopup(name : string): string {
-    this.instruments = [];
-    var html = "";
-    this.instrumentService.getByOrigin(name).subscribe((instruments) => {
-      this.instruments = instruments;
-      console.log(instruments);
+  makePopup(name : string, instruments : Instrument[]): string {
+    var html: string = "<h3>" + name + "</h3>";
+    html += "<div id = 'grid'>";
 
-      instruments.forEach((instrument) => {
-        html += '<div id = "grid-element">' + '<a href = "#">' + instrument.name + '</a><img src = "' + instrument.img + '">' + "</div>";
-      });
+    instruments.forEach((instrument) => {
+      html += "<div id = 'grid-element'><a href = 'https://www.google.com/search?q=" + instrument.name + "' target = '_blank'>" + instrument.name + "</a>";
+      html += "<img src = '" + instrument.img + "'>" + "</div>";
     });
+    html += "</div>";
 
-    return name + html;
+    html += "<style>";
+    html += ".popupCustom .leaflet-popup-tip, .popupCustom .leaflet-popup-content-wrapper {background-color: #333333; color: #C2185B;}";
+    html += ".leaflet-popup-content-wrapper {border: 1px solid #C2185B;}";
+    html += ".leaflet-container a.leaflet-popup-close-button {color: #C2185B;}";
+    html += "#grid-element a {color: #C2185B; font-size: 1.25em;}";
+    html += "img{ max-width: 60px;}";
+    html += "#grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 2fr)); width: 300px; gap: 10px; max-height: 250px; overflow-y: scroll;}";
+    html += "#grid-element { display: flex; flex-direction: column; align-items:center;}";
+    html += "</style>";
+    return html;
   }
 }
+
+/*
+
+ makePopup(name : any): string {
+        var html = "";
+    name.forEach((instrument : Instrument) => {
+      html += instrument.name;
+    });
+
+    this.procPromise(name);
+    console.log("HTML APRES " + this.html);
+    return name + this.html;
+  }
+
+  procPromise(name : string): void {
+    this.makePromise(name).then((instruments) => {
+      instruments.forEach((instrument : Instrument) => {
+        this.html += instrument.name;
+      });
+    });
+  }
+
+  makePromise(name : string): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.instrumentService.getByOrigin(name).subscribe((instruments) => resolve(instruments));
+    });
+  }*/

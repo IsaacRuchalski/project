@@ -3,6 +3,7 @@ import {Component, AfterViewInit} from "@angular/core";
 
 import * as L from "leaflet";
 import {Observable} from "rxjs";
+import {timeout} from "rxjs/operators";
 import {Instrument} from "../core/models/instrument";
 import {InstrumentService} from "../core/services/http/instrument.service";
 import {PopupService} from "../core/services/http/popup.service";
@@ -10,7 +11,7 @@ import {ShapeService} from "../core/services/map/shape.service";
 
 @Component({selector: "app-map", templateUrl: "./map.component.html", styleUrls: ["./map.component.scss"]})
 export class MapComponent implements AfterViewInit {
-  private STYLES = {
+  public STYLES = {
     weight: 2,
     opacity: 0.9,
     color: "#C2185B",
@@ -18,7 +19,7 @@ export class MapComponent implements AfterViewInit {
     fillColor: "#1a1a1a"
   };
 
-  private STYLES_CLICKED = {
+  public STYLES_CLICKED = {
     weight: 2,
     opacity: 1.0,
     color: "#9f144b",
@@ -27,11 +28,9 @@ export class MapComponent implements AfterViewInit {
   };
 
   private map: any;
-
   private shapes: any;
-
   private instruments$?: Observable<Instrument[]>;
-  private instruments?: Instrument[];
+  private instruments: Instrument[] = [];
 
   constructor(private shapeService : ShapeService, private popupService : PopupService, private instrumentService : InstrumentService, private http : HttpClient) {}
 
@@ -40,6 +39,7 @@ export class MapComponent implements AfterViewInit {
 
     this.shapeService.get().subscribe((shapes) => {
       this.shapes = shapes;
+      console.log(this.shapes);
       this.initLayer();
     });
   }
@@ -62,13 +62,19 @@ export class MapComponent implements AfterViewInit {
 
   //SHAPES
   private initLayer() {
+    var instruments: Observable<Instrument[]>;
     const Layer = L.geoJSON(this.shapes, {
       style: (feature) => this.STYLES,
 
-      onEachFeature: (feature, layer) => (layer.bindPopup(this.popupService.makePopup(feature.properties.ADMIN)), layer.on({
-        mouseover: (e) => this.highlightFeature(e),
-        mouseout: (e) => this.resetFeature(e)
-        // mousedown: (e) => layer.bindPopup(this.popupService.makePopup(feature.properties.ADMIN))
+      onEachFeature: (feature, layer) => (layer.bindPopup("", {className: "popupCustom"}), layer.on({
+        mouseover: (e : any) => this.highlightFeature(e),
+        mouseout: (e : any) => this.resetFeature(e),
+        mousedown: (e) => {
+          this.instrumentService.getByOrigin(feature.properties.ADMIN).subscribe((instruments) => (this.instruments = instruments)),
+          setTimeout(() => {
+            layer.setPopupContent(this.popupService.makePopup(feature.properties.ADMIN, this.instruments));
+          }, 150);
+        }
       }))
     });
     this.map.addLayer(Layer);
@@ -84,5 +90,12 @@ export class MapComponent implements AfterViewInit {
     const layer = e.target;
 
     layer.setStyle(this.STYLES);
+  }
+
+  private onEachFeature(feature : any, layer : any) {
+    // does this feature have a property named popupContent?
+    var instruments = [];
+
+    //  layer.bindPopup(this.popupService.makePopup(feature.properties.ADMIN));
   }
 }

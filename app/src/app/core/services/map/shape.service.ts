@@ -1,15 +1,12 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from "@angular/core";
+import {HttpClient} from "@angular/common/http";
+import {delay} from "rxjs/operators";
 
-
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: "root"})
 export class ShapeService {
-  constructor(private http: HttpClient) { }
+  constructor(private http : HttpClient) {}
 
   get() {
-    return this.http.get('/assets/map/countries.geojson');
+    return this.http.get("/assets/map/countries.geojson");
   }
 }
