@@ -1,19 +1,17 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { InstrumentComponent } from './instrument.component';
+import {NgModule} from "@angular/core";
+import {RouterModule, Routes} from "@angular/router";
+import {InstrumentDetailsComponent} from "../instrument-details/instrument-details.component";
+import {InstrumentComponent} from "./instrument.component";
 
 const routes: Routes = [
-
-{path: "", component: InstrumentComponent}
-
-
-
-
-
+  {
+    path: "",
+    component: InstrumentComponent
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class InstrumentRoutingModule { }
+export class InstrumentRoutingModule {}
