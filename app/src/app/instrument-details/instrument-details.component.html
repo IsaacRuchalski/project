@@ -48,8 +48,9 @@
             <mat-card-header>
 
               <mat-card-title>Description</mat-card-title>
-              <mat-card-subtitle *ngIf = "descWiki">depuis Wikipedia</mat-card-subtitle>
-              <mat-card-subtitle *ngIf = "!descWiki">Description générée depuis le site web, pas de page Wikipedia</mat-card-subtitle>
+              <mat-card-subtitle *ngIf = "descWiki">générée depuis Wikipedia</mat-card-subtitle>
+              <mat-card-subtitle *ngIf = "!descWiki">générée depuis l'API, pas de page Wikipedia</mat-card-subtitle>
+              
             </mat-card-header>
 
             <mat-card-content>
