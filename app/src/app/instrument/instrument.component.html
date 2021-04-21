@@ -37,18 +37,25 @@
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/instruments/{{row.name}}"></tr>
 </table> -->
 
-<div *ngFor = "let instrument of instruments">
+<div fxLayout = "row wrap" fxLayoutGap="20px grid" *ngIf ="instruments" id = "grid" >
+  <div fxFlex="25%" *ngFor = "let instrument of instruments">
 
-  <mat-card>
+    <mat-card  routerLink="/instruments/{{instrument.name}}">
 
-    <mat-card-header>
+      <mat-card-header>
 
-        <mat-card-title>{{instrument.name}}</mat-card-title>
+          <mat-card-title>{{instrument.name}}</mat-card-title>
 
-    </mat-card-header>
+          <mat-card-subtitle>{{instrument.familleId | famille}}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src={{instrument.img}} alt={{instrument.name}} class = "image">
+      <mat-card-content>
 
+        <p>{{instrument.description | resume}}</p>
+      
+      </mat-card-content>
 
+    </mat-card>
 
-  </mat-card>
-
+  </div>
 </div>

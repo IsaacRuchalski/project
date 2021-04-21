@@ -7,9 +7,12 @@ import {FamillePipe} from "./pipes/famille.pipe";
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
-
+import {FlexLayoutModule} from "@angular/flex-layout";
+import {ResumePipe} from "./pipes/resume.pipe";
 @NgModule({
-  declarations: [FamillePipe],
+  declarations: [
+    FamillePipe, ResumePipe
+  ],
   imports: [CommonModule],
   exports: [
     MatTabsModule,
@@ -18,7 +21,9 @@ import {MatIconModule} from "@angular/material/icon";
     FamillePipe,
     MatGridListModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    FlexLayoutModule,
+    ResumePipe
   ]
 })
 export class SharedModule {}

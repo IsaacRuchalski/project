@@ -1,7 +1,5 @@
 mat-grid-tile {
 
-    background-color: red;
-    
 }
 .mat-grid-tile .mat-figure {  
     display: block !important;
@@ -67,19 +65,20 @@ width: auto;
 }
 
 .mat-grid-tile {
-
+ 
 
 }
 
 mat-card-title{
 
-color: var(--main-background)
-
+color: var(--main-background);
+margin-top: 10px;
 }
 
 mat-card-content {
 
 
     color: white;
-
+    font-size: 18px;
+   
 }

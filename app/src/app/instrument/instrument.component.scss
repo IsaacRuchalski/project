@@ -39,9 +39,9 @@ table {
 
   tr:hover {
 
-cursor: pointer;
-background: var(--main-background);
-transition: 200ms;
+    cursor: pointer;
+    background: var(--main-background);
+    transition: 200ms;
 
   }
 
@@ -57,3 +57,36 @@ transition: 200ms;
     border-bottom-color: var(--main-background);
 
   }
+
+  #grid{
+
+    margin: 0 auto !important;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px!important;
+    margin-top: 20px!important;
+    
+  }
+mat-card{
+
+  height: 300px;
+}
+
+mat-card-title {
+
+color: var(--main-background)
+
+}
+
+mat-card-content {
+margin-top: 20px;
+color: white;
+
+}
+.image {
+  width:100%;
+  margin: 0 auto;
+  height: 120px; /* adjust as needed */
+  object-fit: contain;
+
+}
