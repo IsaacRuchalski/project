@@ -1,0 +1,85 @@
+mat-grid-tile {
+
+    background-color: red;
+    
+}
+.mat-grid-tile .mat-figure {  
+    display: block !important;
+    }
+
+    #icone {
+padding: 10px;
+width: 80%;
+
+    }
+mat-grid-list {
+
+
+    width: 100%;
+    margin: 0 auto;
+
+    padding-bottom: 2em;
+    height: 100%;
+}
+
+
+//card
+
+mat-card {
+
+height: 100%;
+width: 100%;
+}
+
+app-country {
+
+    width: 3em;
+    margin: 0 0 0 0.5em;
+}
+#rubrique {
+
+display: flex;
+flex-direction: row;
+margin: 0 1em 0 0;
+}
+
+.mat-card-subtitle {
+
+display: flex !important;
+flex-direction: row !important;
+align-items: baseline !important;
+
+}
+
+#icon {
+
+width: auto;
+
+}
+
+#icon-card {
+
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+}
+
+.mat-grid-tile {
+
+
+}
+
+mat-card-title{
+
+color: var(--main-background)
+
+}
+
+mat-card-content {
+
+
+    color: white;
+
+}

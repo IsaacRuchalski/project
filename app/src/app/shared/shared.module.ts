@@ -1,12 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-
+import {NgModule} from "@angular/core";
+import {CommonModule} from "@angular/common";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatSliderModule} from "@angular/material/slider";
+import {MatTableModule} from "@angular/material/table";
+import {FamillePipe} from "./pipes/famille.pipe";
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatCardModule} from "@angular/material/card";
+import {MatIconModule} from "@angular/material/icon";
 
 @NgModule({
-  declarations: [],
-  imports: [
-    CommonModule
+  declarations: [FamillePipe],
+  imports: [CommonModule],
+  exports: [
+    MatTabsModule,
+    MatSliderModule,
+    MatTableModule,
+    FamillePipe,
+    MatGridListModule,
+    MatCardModule,
+    MatIconModule
   ]
 })
-export class SharedModule { }
+export class SharedModule {}

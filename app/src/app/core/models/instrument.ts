@@ -5,4 +5,5 @@ export interface Instrument {
   img: string;
   familleId: number;
   origin: string;
+  wikiSearch: string;
 }

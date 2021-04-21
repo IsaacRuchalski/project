@@ -1,5 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: "Merienda";
+    src: local("Merienda-Regular"), url(./assets/fonts/Merienda-Regular.ttf) format("truetype");
+}
+
+
+
+* {
+
+    font-family: "Merienda";
+
+}
+p,a {
+
+    font-family: "Merienda"!important;
+
+}
 html, body {
     height: 100%;
     box-sizing: border-box;

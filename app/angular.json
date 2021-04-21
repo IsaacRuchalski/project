@@ -34,7 +34,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./src/assets/styles/customTheme.css",
               "src/styles.scss",
               "./node_modules/leaflet/dist/leaflet.css"
             ],
@@ -99,7 +99,7 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./src/assets/styles/customTheme.css",
               "src/styles.scss",
               "../node_modules/leaflet/dist/leaflet.css"
             ],

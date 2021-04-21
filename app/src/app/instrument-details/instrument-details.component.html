@@ -1,0 +1,72 @@
+
+    
+    
+  <!--  <app-description [name] = "instrument.name"></app-description>-->
+
+    <mat-grid-list cols="6" rowHeight="4:2.25" *ngIf="instrument" id = "container">
+    
+        
+        <mat-grid-tile [colspan] = 6 [rowspan] = 1>
+
+          <mat-card>
+            
+            <mat-card-header>
+
+              <mat-card-title>{{instrument.name | titlecase}}</mat-card-title>
+
+            </mat-card-header>
+
+            <mat-card-subtitle>
+              
+              <section id = "rubrique">
+                <mat-icon aria-hidden="false" aria-label="Home">fingerprint</mat-icon> <p>{{instrument.familleId | famille}}</p>
+              </section>
+
+              <section id = "rubrique">
+                <mat-icon aria-hidden="false" aria-label="Orgine">place</mat-icon><p>{{instrument.origin}}</p><app-country [name] = "instrument.origin"></app-country>
+              </section>
+            </mat-card-subtitle>
+
+          </mat-card>
+
+        </mat-grid-tile>
+        <mat-grid-tile [colspan] = 1 [rowspan] = 3>
+
+          <mat-card id = "icon-card">
+
+            <img mat-card-image src={{instrument.img}} alt="Picture of {{instrument.name}}" id="icone">
+
+          </mat-card>
+
+
+
+        </mat-grid-tile>
+        <mat-grid-tile [colspan] = 5 [rowspan] = 3>
+
+          <mat-card>
+
+            <mat-card-header>
+
+              <mat-card-title>Description</mat-card-title>
+              <mat-card-subtitle *ngIf = "descWiki">depuis Wikipedia</mat-card-subtitle>
+              <mat-card-subtitle *ngIf = "!descWiki">Description générée depuis le site web, pas de page Wikipedia</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+
+              <app-description [name] = "instrument.wikiSearch" (newItemEvent) = formatWiki($event) *ngIf = "descWiki"></app-description>
+              <p *ngIf = "!descWiki">{{instrument.description}}</p>
+
+            </mat-card-content>
+
+
+
+
+          </mat-card>
+
+
+
+        </mat-grid-tile>
+        
+        
+      </mat-grid-list>

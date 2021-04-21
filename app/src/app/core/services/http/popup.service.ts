@@ -23,21 +23,26 @@ export class PopupService {
       var name = instrument.name
         ? instrument.name.charAt(0).toUpperCase() + instrument.name.substr(1).toLowerCase()
         : "";
-      html += "<div id = 'grid-element'><a href = 'https://www.google.com/search?q=" + instrument.name + " instrument' target = '_blank'>" + name + "</a>";
-      html += "<img src = '" + instrument.img + "'>" + "</div>";
+      html += "<a href = '/instruments/" + instrument.name + "' target = ''><div id = 'grid-element'><p>" + name + "</p>";
+      html += "<img src = '" + instrument.img + "'>" + "</div></a>";
     });
     html += "</div>";
 
+    //Mise en forme de la popup
     html += "<style>";
-    html += ".popupCustom .leaflet-popup-tip, .popupCustom .leaflet-popup-content-wrapper {background-color: #333333; color: #C2185B;}";
-    html += ".leaflet-popup-content-wrapper {border: 1px solid #C2185B; width: 100%;}";
-    html += ".leaflet-container a.leaflet-popup-close-button {color: #C2185B;}";
-    html += "#grid-element a {color: #C2185B; font-size: 1.25em;}";
-    html += "img{ max-height: 95px; max-width: 100px;}";
-    html += "#grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 2fr)); width: 300px; gap: 10px; max-height: 250px; overflow-y: auto;}";
+    html += ".popupCustom .leaflet-popup-tip, .popupCustom .leaflet-popup-content-wrapper {background-color: var(--main-txt); color: var(--main-background);}";
+    html += ".leaflet-popup-content-wrapper {border: 1px solid var(--main-background); width: 100%;}";
+    html += ".mat-h3, .mat-subheading-2, .mat-typography h3 {font-family: 'Merienda';}";
+    html += ".leaflet-container a.leaflet-popup-close-button {color: var(--main-background);}";
+    html += ".popupCustom a {text-decoration: none; color: var(--main-txt); border: 1px solid #333333;}";
+    html += ".popupCustom a:hover {text-decoration: underline;}";
+    html += "#grid-element p {color: var(--main-background); font-size: 1.25em; margin: 10px; }";
+    html += "img{ max-height: 95px; max-width: 80px;}";
+    html += "#grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 2fr)); min-width: 200px; gap: 10px; max-height: 330px; overflow-y: auto;}";
     html += "#grid-element { display: flex; flex-direction: column; align-items:center; width: 100%; height: auto;}";
-    html += "::-webkit-scrollbar {width: 10px;} ::-webkit-scrollbar-track {background: #333333;}";
-    html += "::-webkit-scrollbar-thumb {background: #C2185B;} ::-webkit-scrollbar-thumb:hover {background: #e31c6c; cursor: pointer;}";
+    html += ".popupCustom a:hover {border: 1px solid var(--main-background);}";
+    html += "::-webkit-scrollbar {width: 10px; background: #555555} ::-webkit-scrollbar-track {background: #555555);}";
+    html += "::-webkit-scrollbar-thumb {background: var(--main-background);} ::-webkit-scrollbar-thumb:hover {background: var(main--background); cursor: pointer;}";
     html += "</style>";
     return html;
   }

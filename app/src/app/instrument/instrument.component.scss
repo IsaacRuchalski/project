@@ -16,6 +16,12 @@ width: 120px;
 
 }
 
+#flag {
+
+width: 100% !important;
+
+}
+
 table {
     
     width: 80%;
@@ -23,4 +29,31 @@ table {
 
     margin-top : 2em;
     padding-bottom: 2em;
+  }
+
+  tr * {
+
+    color: white;
+
+  }
+
+  tr:hover {
+
+cursor: pointer;
+background: var(--main-background);
+transition: 200ms;
+
+  }
+
+  tr:hover * {
+
+    color: var(--main-txt);
+
+  }
+
+  mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
+
+
+    border-bottom-color: var(--main-background);
+
   }

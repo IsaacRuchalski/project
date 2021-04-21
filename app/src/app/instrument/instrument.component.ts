@@ -20,5 +20,7 @@ export class InstrumentComponent implements OnInit {
 
   constructor(private InstrumentService : InstrumentService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
+  }
 }

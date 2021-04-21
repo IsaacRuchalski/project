@@ -9,6 +9,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {InstrumentService} from "./services/http/instrument.service";
 import {ShapeService} from "./services/map/shape.service";
 import {PopupService} from "./services/http/popup.service";
+import {FamilleService} from "./services/http/famille.service";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,6 @@ import {PopupService} from "./services/http/popup.service";
   exports: [
     HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent
   ],
-  providers: [InstrumentService, ShapeService, PopupService]
+  providers: [InstrumentService, ShapeService, PopupService, FamilleService]
 })
 export class CoreModule {}
