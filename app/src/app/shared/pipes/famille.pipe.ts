@@ -37,6 +37,9 @@ export class FamillePipe implements PipeTransform {
       case 8:
         val = "à embouchure";
         break;
+      case 9:
+        val = "à anches multiples";
+        break;
       default:
         val = "Instrument de musique";
         break;
