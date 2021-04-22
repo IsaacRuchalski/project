@@ -25,7 +25,6 @@ export class DescriptionComponent implements OnInit {
         this.description_wiki = "Pas de description wikipedia";
       } else {
         this.description_wiki = wiki.query.pages[0].extract;
-        this.description_wiki = this.formatDesc(this.description_wiki);
       }
       this.addNewItem(this.description_wiki);
     });
