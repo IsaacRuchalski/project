@@ -7,14 +7,6 @@ import {CountryComponent} from "../core/components/country/country.component";
 
 @Component({selector: "app-instrument", templateUrl: "./instrument.component.html", styleUrls: ["./instrument.component.scss"]})
 export class InstrumentComponent implements OnInit {
-  displayedColumns: string[] = [
-    "id",
-    "Name",
-    "Description",
-    "Image",
-    "Famille",
-    "Origine"
-  ];
   instruments: Instrument[] = [];
   instruments$: Observable<Instrument[]> = this.InstrumentService.get();
 

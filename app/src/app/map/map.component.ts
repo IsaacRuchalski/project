@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {ComplexOuterSubscriber} from "rxjs/internal/innerSubscribe";
 import {timeout} from "rxjs/operators";
 import {Instrument} from "../core/models/instrument";
+import {CountryService} from "../core/services/http/country.service";
 import {InstrumentService} from "../core/services/http/instrument.service";
 import {PopupService} from "../core/services/http/popup.service";
 import {ShapeService} from "../core/services/map/shape.service";
@@ -39,7 +40,7 @@ export class MapComponent implements AfterViewInit {
   private instruments$?: Observable<Instrument[]>;
   private instruments: Instrument[] = [];
 
-  constructor(private shapeService : ShapeService, private popupService : PopupService, private instrumentService : InstrumentService, private http : HttpClient) {}
+  constructor(private shapeService : ShapeService, private popupService : PopupService, private instrumentService : InstrumentService, private http : HttpClient, private countryService : CountryService) {}
 
   ngAfterViewInit(): void {
     this.initMap();
@@ -69,6 +70,8 @@ export class MapComponent implements AfterViewInit {
   //SHAPES
   private initLayer() {
     var instruments: Observable<Instrument[]>;
+    var tradu: string;
+    var title: string;
     const Layer = L.geoJSON(this.shapes, {
       style: (feature) => this.STYLES,
 
@@ -76,10 +79,18 @@ export class MapComponent implements AfterViewInit {
         mouseover: (e : any) => this.highlightFeature(e),
         mouseout: (e : any) => this.resetFeature(e),
         mousedown: (e) => {
+          /*   this.countryService.getTraduction(feature.properties.ADMIN).subscribe((trad) => {
+            if (!trad.hasOwnProperty("error")) {
+              tradu = trad[0].translations.fr;
+            } else {
+              tradu = feature.properties.ADMIN;
+            }
+          });*/
+
           this.instrumentService.getByOrigin(feature.properties.ADMIN).subscribe((instruments) => (this.instruments = instruments)),
           setTimeout(() => {
             layer.setPopupContent(this.popupService.makePopup(feature.properties.ADMIN, this.instruments));
-          }, 350);
+          }, 400);
         }
       }))
     });

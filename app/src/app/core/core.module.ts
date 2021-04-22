@@ -10,16 +10,17 @@ import {InstrumentService} from "./services/http/instrument.service";
 import {ShapeService} from "./services/map/shape.service";
 import {PopupService} from "./services/http/popup.service";
 import {FamilleService} from "./services/http/famille.service";
+import {TraductionComponent} from "./components/traduction/traduction.component";
 
 @NgModule({
   declarations: [
-    HeaderComponent, FooterComponent, CountryComponent
+    HeaderComponent, FooterComponent, CountryComponent, TraductionComponent, TraductionComponent
   ],
   imports: [
     CommonModule, HttpClientModule, MatToolbarModule, MatTabsModule
   ],
   exports: [
-    HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent
+    HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent, TraductionComponent
   ],
   providers: [InstrumentService, ShapeService, PopupService, FamilleService]
 })

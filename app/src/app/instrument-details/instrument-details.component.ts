@@ -5,6 +5,8 @@ import {InstrumentService} from "../core/services/http/instrument.service";
 import {Instrument} from "../core/models/instrument";
 import {Observable} from "rxjs";
 import {WikipediaService} from "../core/services/http/wikipedia.service";
+import {CountryService} from "../core/services/http/country.service";
+import {map} from "rxjs/operators";
 
 @Component({selector: "app-instrument-details", templateUrl: "./instrument-details.component.html", styleUrls: ["./instrument-details.component.scss"]})
 
@@ -14,7 +16,7 @@ export class InstrumentDetailsComponent implements OnInit {
   public name = "abc";
   public instrument$: Observable<Instrument>;
   public descWiki: boolean = true;
-  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService) {}
+  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService, private countryService : CountryService) {}
 
   wikipediaDescription;
   ngOnInit(): void {
@@ -24,7 +26,10 @@ export class InstrumentDetailsComponent implements OnInit {
   getInstrument(): void {
     const id = this.route.snapshot.paramMap.get("id");
 
-    this.instrumentService.getInstrument(id).subscribe((instrument) => (this.instrument = instrument[0]));
+    this.instrumentService.getInstrument(id).subscribe((instrument) => {
+      this.instrument = instrument[0];
+    });
+
     this.wikipedia.getArticle("fr", id);
   }
 

@@ -11,4 +11,8 @@ export class CountryService {
     //  console.log("https://restcountries.eu/rest/v2/name/" + encodeURIComponent(name) + "?fields=flag");
     return this.http.get<Country>("https://restcountries.eu/rest/v2/name/" + encodeURIComponent(name) + "?fields=flag");
   }
+
+  getTraduction(country : string): Observable<Object> {
+    return this.http.get<Country>("https://restcountries.eu/rest/v2/name/" + encodeURIComponent(country) + "?fields=translations");
+  }
 }

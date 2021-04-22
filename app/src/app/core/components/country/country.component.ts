@@ -14,6 +14,8 @@ export class CountryComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.name !== undefined) {
+      if (this.name == "South Korea") 
+        this.name = "Korea (Republic of)"; //cas spécial Corée du sud avec API
       this.flag$ = this.countryService.getFlag(this.name);
       this.flag$.subscribe((country : Country) => {
         this.flag = country[0].flag;

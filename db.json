@@ -1,84 +1,321 @@
 {
+  "instruments": [
+    {
+      "id": 1,
+      "name": "violon",
+      "description": "Constitué de 71 éléments en bois collés ou assemblés les uns aux autres, il possède quatre cordes généralement accordées à la quinte que le violoniste frotte avec un archet ou pince avec l'index ou le pouce.",
+      "img": "assets/violon.png",
+      "familleId": 1,
+      "origin": "Italy",
+      "wikiSearch": "violon"
+    },
 
- 
+    {
+      "id": 2,
+      "name": "violoncelle",
+      "description": "Le violoncelle est un instrument à cordes frottées, pincées ou plus rarement frappées avec le bois de l'archet, de la famille des cordes frottées, qui compte aussi le violon, l'alto et la contrebasse.",
+      "img": "assets/violoncelle.png",
+      "familleId": 1,
+      "origin": "Italy",
+      "wikiSearch": "violoncelle"
+    },
 
-        "instruments" : [
+    {
+      "id": 3,
+      "name": "alto",
+      "description": "L'alto fait partie de la famille des instruments à cordes frottées. Il ressemble au violon, mais il est plus grand, plus épais, et plus grave.",
+      "img": "assets/alto.png",
+      "familleId": 1,
+      "origin": "Italy",
+      "wikiSearch": "alto_(instrument_à_cordes)"
+    },
 
-            {"id": 1,
-            "name": "violon",
-            "description": "Constitué de 71 éléments en bois collés ou assemblés les uns aux autres, il possède quatre cordes généralement accordées à la quinte que le violoniste frotte avec un archet ou pince avec l'index ou le pouce.",
-            "img": "img/frottees/violon.png",
-            "familleId": 1 
-            },
+    {
+      "id": 4,
+      "name": "contrebasse",
+      "description": "La contrebasse est un instrument grave de la famille des instruments à cordes. Avant l'octobasse, la contrebasse est le plus grand et l'un des plus graves instruments de cette famille.",
+      "img": "assets/contrebasse.png",
+      "familleId": 1,
+      "origin": "Italy",
+      "wikiSearch": "contrebasse"
+    },
 
-            {"id": 2,
-            "name": "violoncelle",
-            "description": "Le violoncelle est un instrument à cordes frottées, pincées ou plus rarement frappées avec le bois de l'archet, de la famille des cordes frottées, qui compte aussi le violon, l'alto et la contrebasse.",
-            "img" : "img/frottees/violoncelle.png",
-            "familleId": 1
-            },
+    {
+      "id": 5,
+      "name": "tagelharpa",
+      "description": "la talharpa (ou tagelharpa), ou la stråkharpa est une lyre à archet à deux, trois ou quatre cordes originaire de Scandinavie, jouée depuis le moyen-âge.",
+      "img": "assets/tagelharpa.png",
+      "familleId": 1,
+      "origin": "Norway",
+      "wikiSearch": "Tagelharpa"
+    },
 
-            {"id": 3,
-                "name": "violon alto",
-                "description": "L'alto fait partie de la famille des instruments à cordes frottées. Il ressemble au violon, mais il est plus grand, plus épais, et plus grave.",
-                "img" : "img/frottees/alto.png",
-                "familleId": 1
-            },
+    {
+      "id": 6,
+      "name": "vielle à roue",
+      "description": "La vielle à roue est un instrument à cordes, frottées par une roue en bois au lieu d'un archet. La roue est tournée avec une manivelle de la main droite, pendant que la main gauche du musicien joue la mélodie sur un clavier.",
+      "img": "assets/hurdy-gurdy.png",
+      "familleId": 1,
+      "origin": "Germany",
+      "wikiSearch": "vielle à roue"
+    },
 
-            {"id": 4,
-                "name": "contrebasse",
-                "description": "La contrebasse est un instrument grave de la famille des instruments à cordes. Avant l'octobasse, la contrebasse est le plus grand et l'un des plus graves instruments de cette famille.",
-                "img" : "img/frottees/contrebasse.png",
-                "familleId": 1
-            },
+    {
+      "id": 7,
 
-            {"id": 5,
-                "name": "tagelharpa",
-                "description": "la talharpa (ou tagelharpa), ou la stråkharpa est une lyre à archet à quatre cordes originaire de Scandinavie, jouée depuis le moyen-âge.",
-                "img" : "img/frottees/tagelharpa.png",
-                "familleId": 1
-            },
+      "name": "luth",
+      "description": "Le luth est un instrument à cordes pincées. Le terme désigne aussi de manière générale tout instrument ayant les cordes parallèles à un manche.",
+      "img": "assets/luth.png",
+      "familleId": 2,
+      "origin": "Egypt",
+      "wikiSearch": "luth"
+    },
 
-            {"id": 6,
-                "name": "vielle à roue",
-                "description": "La vielle à roue est un instrument à cordes, frottées par une roue en bois au lieu d'un archet. La roue est tournée avec une manivelle de la main droite, pendant que la main gauche du musicien joue la mélodie sur un clavier.",
-                "img" : "img/frottees/hurdy-gurdy.png",
-                "familleId": 1
-            },
+    {
+      "id": 8,
 
-            {"id": 7,
-            
-                "name": "luth",
-                "description": "Le luth est un instrument à cordes pincées. Le terme désigne aussi de manière générale tout instrument ayant les cordes parallèles à un manche.",
-                "img": "img/pincees/luth.png",
-                "familleId": 2
-            },
+      "name": "guitare",
+      "description": "La guitare est un instrument à cordes pincées. Les cordes sont disposées parallèlement à la table d'harmonie et au manche, généralement coupé de frettes, sur lesquelles on appuie les cordes, d'une main, pour produire des notes différentes.",
+      "img": "assets/guitare.png",
+      "familleId": 2,
+      "origin": "Spain",
+      "wikiSearch": "guitare"
+    },
+    {
+      "id": 9,
 
-            {"id": 8,
-            
-                "name": "guitare",
-                "description": "La guitare est un instrument à cordes pincées. Les cordes sont disposées parallèlement à la table d'harmonie et au manche, généralement coupé de frettes, sur lesquelles on appuie les cordes, d'une main, pour produire des notes différentes.",
-                "img": "img/pincees/guitare.png",
-                "familleId": 2
-            }
-        ],
+      "name": "rubab",
+      "description": "le Rubab est un instrument de musique à cordes de la famille du luth. Il est originaire de l'ethnie pachtoune d'Afghanistan et du Nord du Pakistan.",
+      "img": "assets/rubab.png",
+      "familleId": 2,
+      "origin": "Afghanistan",
+      "wikiSearch": "Rubab_(instrument)"
+    },
+    {
+      "id": 10,
 
+      "name": "santour",
+      "description": "le santour appartenant à la famille des cithares sur table. Il s'agit d'un instrument à cordes frappées, tout comme le cymbalum ou le piano apparus plus tard, dont il est l'origine commune.",
+      "img": "assets/santour.png",
+      "familleId": 3,
+      "origin": "Iran",
+      "wikiSearch": "santour"
+    },
+    {
+      "id": 11,
 
-        "familles   ": [
+      "name": "pipasso",
+      "description": "Le pipasso est un instrument de la famille des cornemuses, originaire du nord de la France (Picardie) et du Hainaut belge.",
+      "img": "assets/pipasso.png",
+      "familleId": 5,
+      "origin": "France",
+      "wikiSearch": "Muchosa"
+    },
+    {
+      "id": 12,
 
-            {"id": 1,
-            "name": "cordes frottées"
-            },
-            {"id": 2,
-            "name": "cordes pincées"
-            },
+      "name": "concertina",
+      "description": "Le concertina est un instrument de musique à vent et à anches libres, comme l'accordéon. Il a été inventé en 1829 par Sir Charles Wheatstone.",
+      "img": "assets/concertina.png",
+      "familleId": 6,
+      "origin": "United Kingdom",
+      "wikiSearch": "concertina"
+    },
+    {
+      "id": 13,
 
-            {"id": 3,
-                "name": "cordes frappées"
-            }
-        ]
+      "name": "grande cornemuse des Highlands",
+      "description": "La grande cornemuse écossaise, ou pìob-mhòr en gaélique écossais (grande cornemuse), est un instrument à vent d'Écosse répandu à travers l'ancien empire britannique. ",
+      "img": "assets/highland-bagpipe.png",
+      "familleId": 5,
+      "origin": "United Kingdom",
+      "wikiSearch": "Great_Highland_bagpipe"
+    },
+    {
+      "id": 14,
 
+      "name": "guimbarde",
+      "description": "La guimbarde est un instrument de musique utilisant une lamelle actionnée par le doigt comme élément vibrant et la bouche du musicien comme cavité de résonance.  On en a trouvé des traces au iiie siècle av. J.-C. au nord-ouest de la Chine. C'est un instrument répandu chez les peuples nomades d'Eurasie, de la Finlande au nord du Japon, en Asie et en Mélanésie. Elle existe en Europe depuis au moins l'époque gallo-romaine.",
+      "img": "assets/jaw-harp.png",
+      "familleId": 7,
+      "origin": "China",
+      "wikiSearch": "guimbarde"
+    },
+    {
+      "id": 15,
 
+      "name": "maultrommel",
+      "description": "la Maultrommel (littéralement 'Jaw drum' en autrichien' est une guimbarde retrouvée en Europe, en Finlande, Allemagne, et Autriche.",
+      "img": "assets/maultrommel.png",
+      "familleId": 7,
+      "origin": "Finland",
+      "wikiSearch": "guimbarde"
+    },
+    {
+      "id": 16,
 
+      "name": "bukkehorn",
+      "description": "le Bukkehorn (Buckhorn, Bockhorn) est un ancien instrument scandinave fait à partir d'une corne de chèvre. La corne est habituellement récoltée 5 ou 7 ans avant utilisation comme bukkehorn. utilisé par les bergers, les armées, et autres en tant qu'instrument de signal ou pour faire fuir des animaux.",
+      "img": "assets/bukkehorn.png",
+      "familleId": 8,
+      "origin": "Sweden",
+      "wikiSearch": "Bukkehorn"
+    },
+    {
+      "id": 17,
 
+      "name": "balalaïka",
+      "description": "La balalaïka (Russe : балалайка) est un instrument de musique à cordes pincées populaire de Russie. C'est un luth à manche long à la caisse typiquement triangulaire. Le mot balalaïka vient du russe balakat, qui signifie bavarder, plaisanter, taquiner.",
+      "img": "assets/balalaïka.png",
+      "familleId": 2,
+      "origin": "Russia",
+      "wikiSearch": "balalaïka"
+    },
+    {
+      "id": 18,
+
+      "name": "gousli",
+      "description": "Les gousli, gusli(en russe : гусли) ou housli et husli (en ukrainien : гуслі), constituent peut-être le plus ancien type d'instrument à plusieurs cordes pincées de Russie et d'Ukraine. Il en existe deux formes principales apparentées soit aux cithares, soit aux lyres.",
+      "img": "assets/gousli.png",
+      "familleId": 2,
+      "origin": "Russia",
+      "wikiSearch": "gousli"
+    },
+    {
+      "id": 19,
+
+      "name": "piano",
+      "description": "Le piano est un instrument de musique polyphonique, à clavier, de la famille des cordes frappées. Il se présente sous deux formes : le piano droit, à cordes verticales, et le piano à queue, à cordes horizontales.",
+      "img": "assets/piano.png",
+      "familleId": 3,
+      "origin": "Italy",
+      "wikiSearch": "piano"
+    },
+    {
+      "id": 20,
+
+      "name": "cithare",
+      "description": "La cithare (du grec ancien κιθάρα / kithara) est un instrument de musique à cordes pincées, prépondérant dans le folklore autrichien voire germanique, mais aussi répandu en Hongrie, en Suisse, en Slovénie et en France.",
+      "img": "assets/cithare.png",
+      "familleId": 2,
+      "origin": "Greece",
+      "wikiSearch": "Cithare"
+    },
+    {
+      "id": 21,
+
+      "name": "clavecin",
+      "description": "Un clavecin est un instrument de musique à cordes muni d'un ou plusieurs claviers dont chacune des cordes est « pincée » par un dispositif nommé sautereau.",
+      "img": "assets/clavecin.png",
+      "familleId": 2,
+      "origin": "Italy",
+      "wikiSearch": "clavecin"
+    },
+    {
+      "id": 22,
+
+      "name": "flûte traversière",
+      "description": "La flûte traversière est un instrument à vent de la famille des bois. La flûte traversière partage avec les instruments de la famille des flûtes la méthode de production du son : l'air soufflé est mis en vibration par un biseau disposé à l'embouchure.",
+      "img": "assets/traversiere.png",
+      "familleId": 7,
+      "origin": "China",
+      "wikiSearch": "flûte_traversière"
+    },
+    {
+      "id": 23,
+
+      "name": "aulos",
+      "description": "L'aulos est un instrument à vent très utilisé durant toute l'Antiquité au cours de rites religieux et sociaux. Appelé aulos dans la Grèce antique et tibia dans la Rome antique, le plus souvent joué par paire.",
+      "img": "assets/aulos.png",
+      "familleId": 4,
+      "origin": "Greece",
+      "wikiSearch": "Aulos_(instrument)"
+    },
+    {
+      "id": 24,
+
+      "name": "contrebasson",
+      "description": "Le contrebasson est un instrument de musique à vent de la famille des bois, de perce conique et à anche double, parent du basson et sonnant à l'octave inférieure de celui-ci",
+      "img": "assets/contrebasson.png",
+      "familleId": 5,
+      "origin": "Austria",
+      "wikiSearch": "Contrebasson"
+    },
+    {
+      "id": 25,
+
+      "name": "hautbois",
+      "description": "Le hautbois est un instrument de musique à vent de la famille des bois, de perce conique et dont le son est créé par la vibration d'une anche double au passage du souffle. Son timbre peut être puissant et sonore ou doux et charmeur, clair ou plein de rondeur et de chaleur.",
+      "img": "assets/hautbois.png",
+      "familleId": 5,
+      "origin": "Egypt",
+      "wikiSearch": "Hautbois"
+    },
+    {
+      "id": 26,
+
+      "name": "banjo",
+      "description": "Le banjo est un instrument à cordes avec un cadre en métal et en peau.",
+      "img": "assets/banjo.png",
+      "familleId": 2,
+      "origin": "United States of America",
+      "wikiSearch": "Banjo"
+    },
+    {
+      "id": 27,
+
+      "name": "mandoline",
+      "description": "La mandoline est un petit luth à manche courte originaire d'italie",
+      "img": "assets/mandoline.png",
+      "familleId": 2,
+      "origin": "Italy",
+      "wikiSearch": "Mandoline"
+    },
+    {
+      "id": 28,
+
+      "name": "Orgue",
+      "description": "l'orgue est un instrument à vent puissant et complexe, utilisé depuis des siècles dans les églises, souvent de grandes dimensions, possédant un (ou plusieurs) clavier(s) manuel(s) et un clavier de pédales, dont les touches commandent le passage de l'air, envoyé par une soufflerie et emmagasiné dans les sommiers, vers des tuyaux de taille décroissante disposés par jeux, que l'on peut combiner les uns avec les autres, et qui ont chacun un timbre différent.",
+      "img": "assets/orgue.png",
+      "familleId": 9,
+      "origin": "Greece",
+      "wikiSearch": "Orgue"
+    },
+    {
+      "id": 29,
+
+      "name": "koto",
+      "description": "Le koto est un instrument à cordes pincées traditionnel japonais",
+      "img": "assets/koto.png",
+      "familleId": 2,
+      "origin": "South Korea",
+      "wikiSearch": "Koto"
+    },
+    {
+      "id": 30,
+
+      "name": "erhu",
+      "description": "Instrumment traditionnel chinois, l'Erhu est reconaissable à son manche fin et sa caisse de résonance en peau de serpent",
+      "img": "assets/erhu.png",
+      "familleId": 1,
+      "origin": "China",
+      "wikiSearch": "Erhu"
+    }
+  ],
+
+  "familles": [
+    { "id": 1, "name": "cordes frottées" },
+    { "id": 2, "name": "cordes pincées" },
+
+    { "id": 3, "name": "cordes frappées" },
+
+    { "id": 4, "name": "à anche simple" },
+
+    { "id": 5, "name": "à anche double" },
+
+    { "id": 6, "name": "à anche libre" },
+    { "id": 7, "name": "à biseau" },
+    { "id": 8, "name": "à embouchure" },
+    { "id": 9, "name": "à anches multiples" }
+  ]
 }

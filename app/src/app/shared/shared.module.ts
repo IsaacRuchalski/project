@@ -9,9 +9,10 @@ import {MatCardModule} from "@angular/material/card";
 import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ResumePipe} from "./pipes/resume.pipe";
+import {CountryTradPipe} from "./pipes/country-trad.pipe";
 @NgModule({
   declarations: [
-    FamillePipe, ResumePipe
+    FamillePipe, ResumePipe, CountryTradPipe
   ],
   imports: [CommonModule],
   exports: [
@@ -23,7 +24,8 @@ import {ResumePipe} from "./pipes/resume.pipe";
     MatCardModule,
     MatIconModule,
     FlexLayoutModule,
-    ResumePipe
+    ResumePipe,
+    CountryTradPipe
   ]
 })
 export class SharedModule {}
