@@ -1,82 +1,59 @@
-
-.mat-cell {
-
-    padding: 20px;
-
-}
-
-.mat-cell:nth-of-type(4) {
-
-    width: 10%;
-    
+main {
+  margin-bottom: 2em;
 }
 img {
-
-width: 120px;
-
+  width: 120px;
 }
 
 #flag {
-
-width: 100% !important;
-
+  width: 100% !important;
 }
 
 table {
-    
-    width: 80%;
-    margin: 0 auto;
+  width: 80%;
+  margin: 0 auto;
 
-    margin-top : 2em;
-    padding-bottom: 2em;
-  }
+  margin-top: 2em;
+  padding-bottom: 2em;
+}
 
-  tr * {
+tr * {
+  color: white;
+}
 
-    color: white;
+tr:hover {
+  cursor: pointer;
+  background: var(--main-background);
+  transition: 200ms;
+}
 
-  }
+tr:hover * {
+  color: var(--main-txt);
+}
 
-  tr:hover {
+mat-row,
+mat-header-row,
+mat-footer-row,
+th.mat-header-cell,
+td.mat-cell,
+td.mat-footer-cell {
+  border-bottom-color: var(--main-background);
+}
 
-    cursor: pointer;
-    background: var(--main-background);
-    transition: 200ms;
-
-  }
-
-  tr:hover * {
-
-    color: var(--main-txt);
-
-  }
-
-  mat-row, mat-header-row, mat-footer-row, th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
-
-
-    border-bottom-color: var(--main-background);
-
-  }
-
-  #grid{
-
-    margin: 0 auto !important;
-    width: 100%;
-    height: 100%;
-    margin-left: 10px!important;
-    margin-top: 20px!important;
-    
-  }
-mat-card{
-
+#grid {
+  margin: 0 auto !important;
+  width: 100%;
+  height: 100%;
+  margin-left: 10px !important;
+  margin-top: 20px !important;
+}
+mat-card {
   height: 300px;
   background-color: var(--main-txt);
   border: 1px solid var(--main-txt);
 }
 
-mat-card:hover{
-
-  
+mat-card:hover {
   border: 1px solid var(--main-txt);
   background-color: var(--main-background);
   transition: 300ms;
@@ -84,28 +61,22 @@ mat-card:hover{
   cursor: pointer;
 }
 
-mat-card:hover mat-card-title, mat-card:hover mat-card-content {
-
+mat-card:hover mat-card-title,
+mat-card:hover mat-card-content {
   color: var(--main-txt);
-
-
 }
 
 mat-card-title {
-
-color: var(--main-background)
-
+  color: var(--main-background);
 }
 
 mat-card-content {
-margin-top: 20px;
-color: white;
-
+  margin-top: 20px;
+  color: white;
 }
 .image {
-  width:100%;
+  width: 100%;
   margin: 0 auto;
   height: 120px; /* adjust as needed */
   object-fit: contain;
-
 }
