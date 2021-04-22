@@ -34,7 +34,7 @@ export class PopupService {
     html += ".leaflet-popup-content-wrapper {border: 1px solid var(--main-background); width: 100%;}";
     html += ".mat-h3, .mat-subheading-2, .mat-typography h3 {font-family: 'Merienda';}";
     html += ".leaflet-container a.leaflet-popup-close-button {color: var(--main-background);}";
-    html += ".popupCustom a {text-decoration: none; color: var(--main-txt); border: 1px solid #333333;}";
+    html += ".popupCustom a {text-decoration: none; color: var(--main-txt); border: 1px solid var(--main-txt); border-radius: 10px;}";
     html += ".popupCustom a:hover {text-decoration: underline;}";
     html += "#grid-element p {color: var(--main-background); font-size: 1.25em; margin: 10px; }";
     html += "img{ max-height: 95px; max-width: 80px;}";

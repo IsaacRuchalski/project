@@ -70,6 +70,25 @@ table {
 mat-card{
 
   height: 300px;
+  background-color: var(--main-txt);
+  border: 1px solid var(--main-txt);
+}
+
+mat-card:hover{
+
+  
+  border: 1px solid var(--main-txt);
+  background-color: var(--main-background);
+  transition: 300ms;
+  color: var(--main-txt);
+  cursor: pointer;
+}
+
+mat-card:hover mat-card-title, mat-card:hover mat-card-content {
+
+  color: var(--main-txt);
+
+
 }
 
 mat-card-title {
