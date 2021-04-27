@@ -7,6 +7,7 @@ import {Observable} from "rxjs";
 import {WikipediaService} from "../core/services/http/wikipedia.service";
 import {CountryService} from "../core/services/http/country.service";
 import {map} from "rxjs/operators";
+import {AuthServiceService} from "../core/services/firebase/auth-service.service";
 
 @Component({selector: "app-instrument-details", templateUrl: "./instrument-details.component.html", styleUrls: ["./instrument-details.component.scss"]})
 
@@ -16,7 +17,7 @@ export class InstrumentDetailsComponent implements OnInit {
   public name = "abc";
   public instrument$: Observable<Instrument>;
   public descWiki: boolean = true;
-  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService, private countryService : CountryService) {}
+  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService, public countryService : CountryService, public authService : AuthServiceService) {}
 
   wikipediaDescription;
   ngOnInit(): void {

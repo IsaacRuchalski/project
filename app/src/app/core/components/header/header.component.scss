@@ -1,0 +1,19 @@
+#head {
+  display: flex;
+  justify-content: space-between;
+}
+
+::ng-deep .mat-menu-item {
+  color: var(--main-background) !important;
+}
+
+#status {
+  font-size: 0.75em;
+}
+
+#connexion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  line-height: 0.5em;
+}

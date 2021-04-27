@@ -1,1 +1,2 @@
-<p>{{ this.country }}</p>
+<p *ngIf="isFound">{{ this.country }}</p>
+<p *ngIf="!isFound">Loading ...</p>

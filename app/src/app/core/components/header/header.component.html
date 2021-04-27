@@ -1,3 +1,31 @@
-<mat-toolbar color = "primary">
-    <span>InstruFinder</span>
+<mat-toolbar color="primary" id="head">
+  <span>InstruFinder</span>
+
+  <div id="connexion">
+    <div *ngIf="this.authService.currentUserEmail != ''">
+      <p *ngIf="this.authService.isUserAnonymousLoggedIn" id="status">
+        Anonymous
+      </p>
+      <p *ngIf="!this.authService.isUserAnonymousLoggedIn" id="status">
+        {{ this.authService.currentUserEmail }}
+      </p>
+    </div>
+
+    <div *ngIf="this.authService.currentUserEmail == ''">
+      <p id="status">Non connecté</p>
+    </div>
+    <button
+      mat-icon-button
+      aria-label="Example icon button with a vertical three dot icon"
+      [matMenuTriggerFor]="menu"
+      #menuTrigger
+    >
+      <mat-icon>perm_identity</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="openDialog()">
+        se connecter/déconnecter
+      </button>
+    </mat-menu>
+  </div>
 </mat-toolbar>

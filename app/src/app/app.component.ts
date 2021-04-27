@@ -9,13 +9,13 @@ export class AppComponent {
   constructor(private router : Router) {
     this.navLinks = [
       {
-        label: "instruments",
+        label: "piano",
         link: "./instruments",
-        index: 0
+        index: 1
       }, {
         label: "map",
         link: "./map",
-        index: 1
+        index: 2
       }
     ];
   }

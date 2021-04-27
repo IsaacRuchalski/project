@@ -1,0 +1,13 @@
+i {
+  font-size: 1em;
+  color: white;
+}
+
+#formSignIn {
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep .mat-expansion-panel-header {
+  color: var(--main-background);
+}

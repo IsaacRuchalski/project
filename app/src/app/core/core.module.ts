@@ -11,17 +11,25 @@ import {ShapeService} from "./services/map/shape.service";
 import {PopupService} from "./services/http/popup.service";
 import {FamilleService} from "./services/http/famille.service";
 import {TraductionComponent} from "./components/traduction/traduction.component";
+import {HomeComponent} from "./components/home/home.component";
+import {AuthServiceService} from "./services/firebase/auth-service.service";
+import {SharedModule} from "../shared/shared.module";
 
 @NgModule({
   declarations: [
-    HeaderComponent, FooterComponent, CountryComponent, TraductionComponent, TraductionComponent
+    HeaderComponent,
+    FooterComponent,
+    CountryComponent,
+    TraductionComponent,
+    TraductionComponent,
+    HomeComponent
   ],
   imports: [
-    CommonModule, HttpClientModule, MatToolbarModule, MatTabsModule
+    CommonModule, HttpClientModule, MatToolbarModule, MatTabsModule, SharedModule
   ],
   exports: [
     HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent, TraductionComponent
   ],
-  providers: [InstrumentService, ShapeService, PopupService, FamilleService]
+  providers: [InstrumentService, ShapeService, PopupService, FamilleService, AuthServiceService]
 })
 export class CoreModule {}

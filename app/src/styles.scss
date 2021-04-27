@@ -1,17 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-  font-family: "Merienda";
-  src: local("Merienda-Regular"),
-    url(./assets/fonts/Merienda-Regular.ttf) format("truetype");
+  font-family: "Itim";
+  src: url(./assets/fonts/Itim.ttf) format("truetype");
 }
 
 * {
-  font-family: "Merienda";
+  font-family: "Itim";
 }
 p,
 a {
-  font-family: "Merienda" !important;
+  font-family: "Itim" !important;
 }
 html,
 body {

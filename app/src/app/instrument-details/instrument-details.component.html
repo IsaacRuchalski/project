@@ -1,6 +1,11 @@
 <!--  <app-description [name] = "instrument.name"></app-description>-->
 
-<mat-grid-list cols="6" rowHeight="4:2.25" *ngIf="instrument" id="container">
+<mat-grid-list
+  cols="6"
+  rowHeight="4:2.25"
+  *ngIf="instrument && this.authService.isLoggedIn()"
+  id="container"
+>
   <mat-grid-tile [colspan]="6" [rowspan]="1">
     <mat-card>
       <mat-card-header>
@@ -14,7 +19,7 @@
         </section>
 
         <section id="rubrique">
-          <mat-icon aria-hidden="false" aria-label="Orgine">place</mat-icon>
+          <mat-icon aria-hidden="false" aria-label="Origine">place</mat-icon>
           <app-traduction [country]="instrument.origin"></app-traduction>
           <app-country [name]="instrument.origin"></app-country>
         </section>
@@ -54,3 +59,7 @@
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
+
+<div *ngIf="!this.authService.isLoggedIn()" id="unlogged">
+  <p>Veuillez vous connecter pour accéder à ce contenu.</p>
+</div>

@@ -10,9 +10,18 @@ import {MatIconModule} from "@angular/material/icon";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {ResumePipe} from "./pipes/resume.pipe";
 import {CountryTradPipe} from "./pipes/country-trad.pipe";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {FormsModule} from "@angular/forms";
+import {FilterPipe} from "./pipes/filter.pipe";
+import {MatButtonModule} from "@angular/material/button";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatMenuModule} from "@angular/material/menu";
+import {MatExpansionModule} from "@angular/material/expansion";
+import {MatInputModule} from "@angular/material/input";
 @NgModule({
   declarations: [
-    FamillePipe, ResumePipe, CountryTradPipe
+    FamillePipe, ResumePipe, CountryTradPipe, FilterPipe
   ],
   imports: [CommonModule],
   exports: [
@@ -25,7 +34,17 @@ import {CountryTradPipe} from "./pipes/country-trad.pipe";
     MatIconModule,
     FlexLayoutModule,
     ResumePipe,
-    CountryTradPipe
+    CountryTradPipe,
+    MatPaginatorModule,
+    MatFormFieldModule,
+    FormsModule,
+    FilterPipe,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatExpansionModule,
+    MatInputModule
   ]
 })
 export class SharedModule {}

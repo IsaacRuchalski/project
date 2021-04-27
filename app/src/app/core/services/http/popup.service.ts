@@ -32,7 +32,7 @@ export class PopupService {
     html += "<style>";
     html += ".popupCustom .leaflet-popup-tip, .popupCustom .leaflet-popup-content-wrapper {background-color: var(--main-txt); color: var(--main-background);}";
     html += ".leaflet-popup-content-wrapper {border: 1px solid var(--main-background); width: 100%;}";
-    html += ".mat-h3, .mat-subheading-2, .mat-typography h3 {font-family: 'Merienda';}";
+    html += ".mat-h3, .mat-subheading-2, .mat-typography h3 {font-family: 'Itim';}";
     html += ".leaflet-container a.leaflet-popup-close-button {color: var(--main-background);}";
     html += ".popupCustom a {text-decoration: none; color: var(--main-txt); border: 1px solid var(--main-txt); border-radius: 10px;}";
     html += ".popupCustom a:hover {text-decoration: underline;}";

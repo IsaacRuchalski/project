@@ -1,21 +1,23 @@
 <body>
-
-<app-header></app-header>
-<nav mat-tab-nav-bar backgroundColor = "primary">
-  <a mat-tab-link
-  *ngFor="let link of navLinks"
-  [routerLink]="link.link"
-  routerLinkActive #rla="routerLinkActive"
-  [active]="rla.isActive">
-  {{link.label}}
-  </a>
+  <app-header></app-header>
+  <nav mat-tab-nav-bar backgroundColor="primary">
+    <mat-icon aria-hidden="false" aria-label="" routerLink="./" id="home"
+      >home</mat-icon
+    >
+    <a
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.link"
+      routerLinkActive
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      <mat-icon aria-hidden="false" aria-label="">{{ link.label }}</mat-icon>
+    </a>
   </nav>
 
-<main>
-    
+  <main>
     <router-outlet></router-outlet>
-
-  
-</main>
-<app-footer></app-footer>
+  </main>
+  <app-footer></app-footer>
 </body>

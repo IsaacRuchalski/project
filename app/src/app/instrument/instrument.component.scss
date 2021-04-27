@@ -37,6 +37,27 @@ td.mat-footer-cell {
   border-bottom-color: var(--main-background);
 }
 
+#searchbar {
+  width: 100%;
+  background-color: #424242;
+}
+
+#search {
+  padding: 10px;
+  background-color: var(--main-txt);
+  border: 1px solid var(--main-background);
+  margin-left: 12px;
+  border-radius: 10px;
+  width: 15%;
+  color: white;
+}
+::ng-deep mat-paginator {
+  width: auto;
+}
+::ng-deep .mat-select-value {
+  color: white;
+}
+
 #grid {
   margin: 0 auto !important;
   width: 100%;
