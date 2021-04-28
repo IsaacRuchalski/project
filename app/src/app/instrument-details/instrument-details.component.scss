@@ -1,6 +1,4 @@
-mat-grid-tile {
 
-}
 .mat-grid-tile .mat-figure {  
     display: block !important;
     }
@@ -39,6 +37,7 @@ app-country {
 display: flex;
 flex-direction: row;
 margin: 0 1em 0 0;
+
 }
 
 .mat-card-subtitle {
@@ -46,6 +45,14 @@ margin: 0 1em 0 0;
 display: flex !important;
 flex-direction: row !important;
 align-items: baseline !important;
+justify-content: space-between;
+}
+
+#container {
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: baseline !important;   
 
 }
 
@@ -81,4 +88,19 @@ mat-card-content {
     color: white;
     font-size: 18px;
    
+}
+
+#edit-icon {
+
+color: rgba(255, 255, 255, 0.7);
+
+display: flex !important;
+
+
+}
+
+input {
+
+padding: 10px;
+margin: 0.5em;
 }

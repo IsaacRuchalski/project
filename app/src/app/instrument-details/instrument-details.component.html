@@ -9,21 +9,48 @@
   <mat-grid-tile [colspan]="6" [rowspan]="1">
     <mat-card>
       <mat-card-header>
-        <mat-card-title>{{ instrument.name | titlecase }}</mat-card-title>
+        <mat-card-title *ngIf = "!this.isInEditMode">{{ instrument.name | titlecase }}</mat-card-title>
+        
+          <input *ngIf="this.isInEditMode" id = "titre-input"   [(ngModel)] = "nom"
+          
+          placeholder="{{instrument.name | titlecase}}"
+          type="text" />
+          
       </mat-card-header>
 
       <mat-card-subtitle>
+        <div id = "container">
         <section id="rubrique">
           <mat-icon aria-hidden="false" aria-label="Home">fingerprint</mat-icon>
-          <p>{{ instrument.familleId | famille }}</p>
+          <p *ngIf="!this.isInEditMode">{{ instrument.familleId | famille }}</p>
+         
+            <input *ngIf="this.isInEditMode"  [(ngModel)] = "familleId"
+            
+            placeholder="{{instrument.familleId | famille}}"
+            type="text" />
+            
         </section>
 
         <section id="rubrique">
           <mat-icon aria-hidden="false" aria-label="Origine">place</mat-icon>
-          <app-traduction [country]="instrument.origin"></app-traduction>
-          <app-country [name]="instrument.origin"></app-country>
+          <app-traduction *ngIf="!this.isInEditMode" [country]="instrument.origin"></app-traduction>
+          <app-country *ngIf="!this.isInEditMode" [name]="instrument.origin"></app-country>
+          
+            <input *ngIf="this.isInEditMode"
+            [(ngModel)] = "origine"
+            placeholder="{{instrument.origin}}"
+            type="text" />
+            
         </section>
+      </div>
+     
+        <button mat-icon-button aria-label="" id = "edit-icon" *ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
+          <mat-icon *ngIf="!isInEditMode" (click)="toggleEditMode()">mode_edit</mat-icon>
+          <mat-icon *ngIf="isInEditMode" (click)="toggleEditMode()" (click) = "modifyInstrument(instrument.id)">done</mat-icon>
+        </button>
       </mat-card-subtitle>
+
+   
     </mat-card>
   </mat-grid-tile>
   <mat-grid-tile [colspan]="1" [rowspan]="3">
@@ -48,16 +75,25 @@
         >
       </mat-card-header>
 
-      <mat-card-content>
-        <app-description
+      <mat-card-content *ngIf="!isInEditMode">
+        <app-description 
           [name]="instrument.wikiSearch"
           (newItemEvent)="formatWiki($event)"
           *ngIf="descWiki"
         ></app-description>
         <p *ngIf="!descWiki">{{ instrument.description }}</p>
       </mat-card-content>
+
+      <mat-card-content *ngIf="isInEditMode">
+        <input *ngIf="this.isInEditMode"
+        [(ngModel)] = "descriptionWiki"
+        placeholder="{{instrument.wikiSearch}}"
+        type="text" />
+        <br>
+        <textarea cols = "100" rows = "5" *ngIf="this.isInEditMode"[(ngModel)] = "desc">{{instrument.description}}</textarea>
+      </mat-card-content>
     </mat-card>
   </mat-grid-tile>
 </mat-grid-list>
 
-<app-log-not-found *ngIf="!this.authService.isLoggedIn() && (!this.authService.isUserAnonymousLoggedIn || !this.authService.isVerified())" ></app-log-not-found>
+<app-log-not-found *ngIf="!this.authService.isLoggedIn() && (!this.authService.isUserAnonymousLoggedIn || !this.authService.isVerified())"></app-log-not-found>

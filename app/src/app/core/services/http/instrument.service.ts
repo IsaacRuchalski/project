@@ -17,4 +17,14 @@ export class InstrumentService {
   getInstrument(name : string) {
     return this.http.get<Instrument>("https://evening-brushlands-19063.herokuapp.com/instruments?name=" + encodeURIComponent(name));
   }
+
+  modifyInstrument(instrument: Instrument){
+
+
+    var body = instrument;
+    
+    console.log(instrument);
+    return this.http.put<Object>("https://evening-brushlands-19063.herokuapp.com/instruments/"+instrument.id, body)
+
+  }
 }
