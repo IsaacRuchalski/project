@@ -1,0 +1,22 @@
+<div fxLayout fxLayoutAlign="center center" id = "container">
+    
+    <mat-card>
+    <mat-card-header>
+        
+        <mat-card-title>Vous ne pouvez pas accéder à ce contenu</mat-card-title>
+        <mat-card-subtitle>Vous n'êtes pas connecté</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        
+        <p> Vous devez vous connecter pour accéder à ce contenu.</p>
+        <p>Si vous venez de vous inscrire, n'oubliez pas d'aller vérifier votre adresse e-mail et de rafraîchir la page !</p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="openDialog()">Se connecter</button>
+            <button mat-raised-button color="primary" (click)="refresh()">J'ai vérifié mon adresse e-mail, laissez-moi me connecter !</button>
+        </mat-card-actions>
+</mat-card>
+
+</div>

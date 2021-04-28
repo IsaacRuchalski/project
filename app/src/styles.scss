@@ -18,10 +18,13 @@ body {
   margin: 0;
   font-size: 2em;
 }
-html {
-  width: 100%;
-}
+html, body { height: 100% !important }
 
+main {
+
+height: auto !important;
+
+}
 ::-webkit-scrollbar {
   width: 10px;
   background: #555555;

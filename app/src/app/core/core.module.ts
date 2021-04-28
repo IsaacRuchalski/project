@@ -14,6 +14,7 @@ import {TraductionComponent} from "./components/traduction/traduction.component"
 import {HomeComponent} from "./components/home/home.component";
 import {AuthServiceService} from "./services/firebase/auth-service.service";
 import {SharedModule} from "../shared/shared.module";
+import { LogNotFoundComponent } from './components/log-not-found/log-not-found.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +23,14 @@ import {SharedModule} from "../shared/shared.module";
     CountryComponent,
     TraductionComponent,
     TraductionComponent,
-    HomeComponent
+    HomeComponent,
+    LogNotFoundComponent
   ],
   imports: [
     CommonModule, HttpClientModule, MatToolbarModule, MatTabsModule, SharedModule
   ],
   exports: [
-    HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent, TraductionComponent
+    HeaderComponent, FooterComponent, MatToolbarModule, CountryComponent, TraductionComponent, LogNotFoundComponent
   ],
   providers: [InstrumentService, ShapeService, PopupService, FamilleService, AuthServiceService]
 })

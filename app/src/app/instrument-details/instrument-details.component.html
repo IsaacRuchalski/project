@@ -3,7 +3,7 @@
 <mat-grid-list
   cols="6"
   rowHeight="4:2.25"
-  *ngIf="instrument && this.authService.isLoggedIn()"
+  *ngIf="instrument && this.authService.isLoggedIn() && (this.authService.isVerified() || this.authService.isUserAnonymousLoggedIn)"
   id="container"
 >
   <mat-grid-tile [colspan]="6" [rowspan]="1">
@@ -60,6 +60,4 @@
   </mat-grid-tile>
 </mat-grid-list>
 
-<div *ngIf="!this.authService.isLoggedIn()" id="unlogged">
-  <p>Veuillez vous connecter pour accéder à ce contenu.</p>
-</div>
+<app-log-not-found *ngIf="!this.authService.isLoggedIn() && (!this.authService.isUserAnonymousLoggedIn || !this.authService.isVerified())" ></app-log-not-found>

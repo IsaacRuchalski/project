@@ -14,7 +14,11 @@ export class InstrumentComponent implements OnInit {
   instruments: Instrument[] = [];
   instruments$: Observable<Instrument[]> = this.InstrumentService.get();
 
-  constructor(private InstrumentService : InstrumentService, public authService : AuthServiceService) {}
+  constructor(private InstrumentService : InstrumentService, public authService : AuthServiceService) {
+    if(this.authService!== null){ 
+    console.log(this.authService.isVerified())}
+
+  }
 
   public lowValue = 0;
   public highValue = 12;

@@ -34,10 +34,10 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;" routerLink="/instruments/{{row.name}}"></tr>
 </table> -->
-<div id="searchbar" fxLayout="row wrap" fxLayoutAlign="space-between center">
+<div id="searchbar" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="this.authService.isLoggedIn() && (this.authService.isVerified() || this.authService.isUserAnonymousLoggedIn)">
   <input
     id="search"
-    placeholder="search an instrument"
+    placeholder="Rechercher un instrument ..."
     [(ngModel)]="search"
     type="search"
     (keyup)="onKey($event)"
@@ -52,7 +52,7 @@
 <div
   fxLayout="row wrap"
   fxLayoutGap="20px grid"
-  *ngIf="instruments && this.authService.isLoggedIn()"
+  *ngIf="instruments && this.authService.isLoggedIn() && (this.authService.isVerified() || this.authService.isUserAnonymousLoggedIn)"
   id="grid"
 >
   <div
@@ -84,6 +84,5 @@
     </mat-card>
   </div>
 </div>
-<div *ngIf="!this.authService.isLoggedIn()" id="unlogged">
-  <p>Veuillez vous connecter pour accéder à ce contenu.</p>
-</div>
+  <app-log-not-found *ngIf="!this.authService.isLoggedIn()  || (!this.authService.isUserAnonymousLoggedIn && !this.authService.isVerified())" ></app-log-not-found>
+

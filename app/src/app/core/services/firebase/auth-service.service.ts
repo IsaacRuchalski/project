@@ -10,7 +10,9 @@ export class AuthServiceService {
   constructor(private afAuth : AngularFireAuth, private router : Router) {
     this.sub = this.afAuth.authState.subscribe((auth) => {
       this.authState = auth;
+      
     });
+    
   }
 
   get isUserAnonymousLoggedIn() {
@@ -37,27 +39,64 @@ export class AuthServiceService {
   }
 
   isLoggedIn() {
-    if (this.currentUserEmail === "") {
-      return false;
+    var val: boolean;
+    
+    if(this.authState != null){
+      
+    if (this.currentUserEmail === "" && this.authState.emailVerified) {
+      val = false;
     } else {
-      return true;
+      val = true;
     }
   }
+
+  return val;
+  }
+
+  isVerified(){
+
+    if(this.authState != null){
+    return this.authState.emailVerified;
+    }
+  }
+
   anonymousLogin() {
     return this.afAuth.signInAnonymously().then((user) => {
+      
       this.authState = user;
+      
+      
     }).catch((error) => console.log(error));
   }
 
   login(mail, password) {
     return this.afAuth.signInWithEmailAndPassword(mail, password).then((user) => {
+      
+      if(!user.user.isAnonymous && user.user.emailVerified !== true) {
+
+        window.alert("Un mail de vérification vous a été envoyé ! Veuillez vérifier vos mails pour accéder à votre compte.")
+
+      }
+      else {
       this.authState = user;
+
+    }
     }).catch((error) => console.log(error));
   }
 
   signUp(mail, password) {
     return this.afAuth.createUserWithEmailAndPassword(mail, password).then((user) => {
-      this.authState = user;
+
+      if(user.user.emailVerified === false){
+      user.user.sendEmailVerification();
+      window.alert("Un mail de vérification vous a été envoyé ! Veuillez vérifier vos mails pour accéder à votre compte.")
+      this.authState = null;
+      }
+      else {
+
+        this.authState = user;
+
+      }
     }).catch((error) => console.log(error));
   }
   signOut() {

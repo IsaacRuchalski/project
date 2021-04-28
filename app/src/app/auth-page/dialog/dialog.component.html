@@ -1,141 +1,129 @@
 <!--<form [formGroup]="authForm" (ngSubmit)="ngSubmit(authForm.value)"></form>
-
-<h2>Connectez-vous</h2>
-
-<mat-form-field appearance="fill">
-  <input
-    matInput
-    placeholder="email (ex: isaac.ruchalski@gmail.com)"
-    type="text"
-    formControlName="mail"
-  />
-</mat-form-field>-->
-<div *ngIf="this.authService.currentUserEmail != ''">
-  <p *ngIf="this.authService.isUserAnonymousLoggedIn">Logged in as Anonymous</p>
-  <p *ngIf="!this.authService.isUserAnonymousLoggedIn">
-    Logged in as {{ this.authService.currentUserEmail }}
-  </p>
-</div>
-<mat-accordion class="example-headers-align">
-  <!--SIGN IN ANONYMOUSLY-->
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>Sign In Anonymously</mat-expansion-panel-header>
-
-    <div>
-      <button
-        mat-raised-button
-        mat-dialog-close
-        color="primary"
-        (click)="signInAnon()"
-      >
-        Sign in Anonymously*</button
-      ><br />
-      <i>
-        *Vos droits seront limités à la lecture des informations, vous ne
-        pourrez rien éditer !</i
-      >
-    </div>
-  </mat-expansion-panel>
-
-  <!--SIGN IN-->
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>Sign In</mat-expansion-panel-header>
-    <div id="formSignIn">
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          placeholder="abc.xyz@gmail.com"
-          type="text"
-          [(ngModel)]="mail"
-          required
-        />
-
-        <mat-hint>Email</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Mot de passe</mat-label>
-        <input
-          matInput
-          placeholder="stuff"
-          type="password"
-          [(ngModel)]="pwd"
-          required
-        />
-
-        <mat-hint>Mot de passe</mat-hint>
-      </mat-form-field>
-      <div>
-        <button
-          mat-raised-button
-          mat-dialog-close
-          color="primary"
-          (click)="signIn()"
-        >
-          Sign in
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-
-  <!--Sign UP-->
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>Sign Up</mat-expansion-panel-header>
-    <div id="formSignIn">
-      <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input
-          matInput
-          placeholder="abc.xyz@gmail.com"
-          type="text"
-          [(ngModel)]="mail"
-          required
-        />
-
-        <mat-hint>Email</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field appearance="fill">
-        <mat-label>Mot de passe</mat-label>
-        <input
-          matInput
-          placeholder="stuff"
-          type="password"
-          [(ngModel)]="pwd"
-          required
-        />
-
-        <mat-hint>Mot de passe</mat-hint>
-      </mat-form-field>
-      <div>
-        <button
-          mat-raised-button
-          mat-dialog-close
-          color="primary"
-          (click)="signUp()"
-        >
-          Sign in
-        </button>
-      </div>
-    </div>
-  </mat-expansion-panel>
-  <!--SIGN OUT-->
-
-  <mat-expansion-panel>
-    <mat-expansion-panel-header>Sign Out</mat-expansion-panel-header>
-
-    <div>
-      <button
-        mat-raised-button
-        mat-dialog-close
-        color="primary"
-        (click)="signOut()"
-      >
-        Sign Out
-      </button>
-    </div>
-  </mat-expansion-panel>
-</mat-accordion>
+   <h2>Connectez-vous</h2>
+   
+   <mat-form-field appearance="fill">
+     <input
+       matInput
+       placeholder="email (ex: isaac.ruchalski@gmail.com)"
+       type="text"
+       formControlName="mail"
+     />
+   </mat-form-field>-->
+   <div *ngIf="this.authService.currentUserEmail != ''">
+    <p *ngIf="this.authService.isUserAnonymousLoggedIn">Connecté en anonyme</p>
+    <p *ngIf="!this.authService.isUserAnonymousLoggedIn">
+       Connecté en tant que {{ this.authService.currentUserEmail }}
+    </p>
+ </div>
+ <mat-accordion class="example-headers-align">
+    <!--SIGN IN ANONYMOUSLY-->
+    <mat-expansion-panel>
+       <mat-expansion-panel-header>Se connecter en anonyme</mat-expansion-panel-header>
+       <div>
+          <button
+             mat-raised-button
+             mat-dialog-close
+             color="primary"
+             (click)="signInAnon()"
+             >
+          Se connecter anonymement*</button
+             ><br />
+          <i>
+          *Vos droits seront limités à la lecture des informations, vous ne
+          pourrez rien éditer !</i
+             >
+       </div>
+    </mat-expansion-panel>
+    <!--SIGN IN-->
+    <mat-expansion-panel>
+       <mat-expansion-panel-header>Se connecter</mat-expansion-panel-header>
+       <div id="formSignIn">
+          <mat-form-field appearance="fill">
+             <mat-label>Email</mat-label>
+             <input
+             matInput
+             placeholder="abc.xyz@gmail.com"
+             type="text"
+             [(ngModel)]="mail"
+             required
+             />
+             <mat-hint>Email</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+             <mat-label>Mot de passe</mat-label>
+             <input
+             matInput
+             placeholder="stuff"
+             type="password"
+             [(ngModel)]="pwd"
+             required
+             />
+             <mat-hint>Mot de passe</mat-hint>
+          </mat-form-field>
+          <div>
+             <button
+                mat-raised-button
+                mat-dialog-close
+                color="primary"
+                (click)="signIn()"
+                >
+             Se connecter
+             </button>
+          </div>
+       </div>
+    </mat-expansion-panel>
+    <!--Sign UP-->
+    <mat-expansion-panel>
+       <mat-expansion-panel-header>S'inscrire</mat-expansion-panel-header>
+       <div id="formSignIn">
+          <mat-form-field appearance="fill">
+             <mat-label>Email</mat-label>
+             <input
+             matInput
+             placeholder="abc.xyz@gmail.com"
+             type="text"
+             [(ngModel)]="mail"
+             required
+             />
+             <mat-hint>Email</mat-hint>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+             <mat-label>Mot de passe</mat-label>
+             <input
+             matInput
+             placeholder="stuff"
+             type="password"
+             [(ngModel)]="pwd"
+             required
+             />
+             <mat-hint>Mot de passe</mat-hint>
+          </mat-form-field>
+          <div>
+             <button
+                mat-raised-button
+                mat-dialog-close
+                color="primary"
+                (click)="signUp()"
+                >
+             S'inscrire
+             </button>
+             ><br />
+             <i>Un mail de confirmation vous sera envoyé, vous ne serez connecté qu'après validation</i>
+          </div>
+       </div>
+    </mat-expansion-panel>
+    <!--SIGN OUT-->
+    <mat-expansion-panel>
+       <mat-expansion-panel-header>Se déconnecter</mat-expansion-panel-header>
+       <div>
+          <button
+             mat-raised-button
+             mat-dialog-close
+             color="primary"
+             (click)="signOut()"
+             >
+          Se déconnecter
+          </button>
+       </div>
+    </mat-expansion-panel>
+ </mat-accordion>
