@@ -32,6 +32,22 @@ Vous pouvez ensuite pour connecter et/ou vous inscrire.
 
 ![non connecte](https://i.postimg.cc/x1Ggf72j/non-co.png)
 
-* <span style="color: red;">Ne peut pas accéder à la recherche d'instruments</span>
-* Peut accéder à la carte
-* Ne peut pas éditer, supprimer, ou ajouter des éléments
+* \+ Peut accéder à la carte
+* \- Ne peut pas accéder à la recherche d'instruments
+* \- Ne peut pas éditer, supprimer, ou ajouter des éléments
+
+#### Anonyme
+
+![anon](https://i.postimg.cc/Hk2Mr1Px/anon.png)
+
+* \+ Peut accéder à la carte
+* \+ Peut accéder à la recherche d'instruments
+* \- Ne peut pas éditer, supprimer, ou ajouter des éléments
+
+#### Inscrit
+
+![inscrit.png](https://i.postimg.cc/vBWbmb32/inscrit.png)
+
+* \+ Peut accéder à la carte
+* \+ Peut accéder à la recherche d'instruments
+* \+ Peut éditer, supprimer, ou ajouter des éléments
