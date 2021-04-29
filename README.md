@@ -26,6 +26,10 @@ Pour se connecter, 2 possibilités :
 
 Vous pouvez ensuite pour connecter et/ou vous inscrire.
 
+### Inscription
+
+Une fois inscrit, vous devrez valider votre email, et vous pourrez ensuite vous connecter.
+
 ### Statuts d'authentification
 
 #### Non connecté:
