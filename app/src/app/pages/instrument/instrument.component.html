@@ -11,7 +11,7 @@
   <div id = "right-side">
 
     <button mat-icon-button aria-label="" id = "add-icon" *ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
-      <mat-icon  >add</mat-icon>
+      <mat-icon (click)="addInstrument()" >add</mat-icon>
       
     </button>
   <mat-paginator

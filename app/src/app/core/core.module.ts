@@ -11,7 +11,7 @@ import {ShapeService} from "./services/map/shape.service";
 import {PopupService} from "./services/http/popup.service";
 import {FamilleService} from "./services/http/famille.service";
 import {TraductionComponent} from "./components/traduction/traduction.component";
-import {HomeComponent} from "./components/home/home.component";
+import {HomeComponent} from "../pages/home/home.component";
 import {AuthServiceService} from "./services/firebase/auth-service.service";
 import {SharedModule} from "../shared/shared.module";
 import { LogNotFoundComponent } from './components/log-not-found/log-not-found.component';

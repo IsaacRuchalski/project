@@ -1,9 +1,10 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
 import {AuthPageModule} from "./pages/auth-page/auth-page.module";
-import {HomeComponent} from "./core/components/home/home.component";
+import {HomeComponent} from "./pages/home/home.component";
+import { InstrumentDetailsComponent } from "./pages/instrument-details/instrument-details.component";
 
-import {InstrumentDetailsComponent} from "./pages/instrument-details/instrument-details.component";
+
 import {InstrumentComponent} from "./pages/instrument/instrument.component";
 import {MapComponent} from "./pages/map/map.component";
 

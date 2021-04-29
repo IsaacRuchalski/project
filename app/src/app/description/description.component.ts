@@ -19,15 +19,18 @@ export class DescriptionComponent implements OnInit {
   constructor(private wiki : WikipediaService) {}
 
   ngOnInit(): void {
+    
+    if(this.name.length != 0){
     this.wiki$ = this.wiki.getArticle("fr", this.name);
     this.wiki$.subscribe((wiki : any) => {
       if (wiki.query.pages[0].missing == true) {
-        this.description_wiki = "Pas de description wikipedia";
+        this.description_wiki = "";
       } else {
         this.description_wiki = wiki.query.pages[0].extract;
       }
       this.addNewItem(this.description_wiki);
     });
+  }
   }
 
   formatDesc(description : string): string {

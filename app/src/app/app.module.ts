@@ -10,10 +10,12 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
 //import { MatTableModule } from '@angular/material/table';
 import {MatTabsModule} from "@angular/material/tabs";
 import {MapComponent} from "./pages/map/map.component";
-import {InstrumentDetailsComponent} from "./pages/instrument-details/instrument-details.component";
+
 import {DescriptionComponent} from "./description/description.component";
 import {SharedModule} from "./shared/shared.module";
 import {environment} from "src/environments/environment";
+import { InstrumentDetailsComponent } from "./pages/instrument-details/instrument-details.component";
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {environment} from "src/environments/environment";
     SharedModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

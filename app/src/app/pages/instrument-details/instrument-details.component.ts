@@ -55,7 +55,8 @@ export class InstrumentDetailsComponent implements OnInit {
   }
 
   formatWiki(desc : string) {
-    if (desc === "Pas de description wikipedia") {
+    console.log("DESC : "+desc.length)
+    if (desc === "Pas de description wikipedia" || desc.length == 0) {
       this.descWiki = false;
     }
   }
@@ -124,10 +125,23 @@ export class InstrumentDetailsComponent implements OnInit {
   deleteInstrument(id){
 
 
-    this.instrumentService.deleteInstrument(id).subscribe();
+    this.instrumentService.deleteInstrument(id).subscribe(() => {
 
 
-this.router.navigate(["/instruments"]);  
+
+      this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=> {
+        this.router.navigate(['/instruments']).then(() => window.location.reload())
+          
+
+    }
+
+
+
+    );
+
+
+  });
+
 
   }
 

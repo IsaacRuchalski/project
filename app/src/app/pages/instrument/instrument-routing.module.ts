@@ -1,6 +1,7 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {InstrumentDetailsComponent} from "../instrument-details/instrument-details.component";
+import { InstrumentDetailsComponent } from "../instrument-details/instrument-details.component";
+
 import {InstrumentComponent} from "./instrument.component";
 
 const routes: Routes = [

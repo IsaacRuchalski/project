@@ -1,0 +1,46 @@
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <h2>Ajouter un instrument</h2>
+    <mat-form-field appearance="fill">
+       <mat-label>Nom</mat-label>
+       <input matInput formControlName = "name">
+       <mat-hint>Le nom de l'instrument</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+       <mat-label>Description</mat-label>
+       <input matInput formControlName = "description">
+       <mat-hint>Une courte description de l'instrument</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+       <mat-label>Image</mat-label>
+       <input matInput formControlName = "img">
+       <mat-hint>Lien vers une image (.png, .jpg, ...)</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Famille</mat-label>
+        <mat-select formControlName = "familleId">
+          <mat-option *ngFor="let famille of familles$ | async" [value]="famille.id">
+            {{famille.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <mat-form-field appearance="fill">
+       <mat-label>Origine</mat-label>
+       <input matInput formControlName = "origin">
+       <mat-hint>Pays d'origine du pays. En anglais !!</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+       <mat-label>Wikipedia</mat-label>
+       <input matInput formControlName = "wikiSearch">
+       <mat-hint>Critère de recherche wikipedia.* </mat-hint>
+    </mat-form-field>
+    <p>*Par exemple, la page wikipedia du violon alto n'est pas https://fr.wikipedia.org/wiki/Alto , mais https://fr.wikipedia.org/wiki/Alto_(instrument_à_cordes). Donc le critère ici est Alto_(instrument_à_cordes). Vous pouvez le trouver en recherchant votre instrument sur wikipedia. Si votre instrument n'a pas de page wikipédia dédiée (par exemple le Bukkehorn), ou que vous laissez vide, la description sera remplacée par celle que vous avez écrite.</p>
+    <button
+       type = "submit"
+       mat-raised-button
+       mat-dialog-close
+       color="primary"
+     
+       >
+    Ajouter instrument
+    </button>
+ </form>
