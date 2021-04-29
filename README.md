@@ -32,6 +32,6 @@ Vous pouvez ensuite pour connecter et/ou vous inscrire.
 
 ![non connecte](https://i.postimg.cc/x1Ggf72j/non-co.png)
 
-* Ne peut pas accéder à la recherche d'instruments
+* <span style="color: red;">Ne peut pas accéder à la recherche d'instruments</span>
 * Peut accéder à la carte
 * Ne peut pas éditer, supprimer, ou ajouter des éléments
