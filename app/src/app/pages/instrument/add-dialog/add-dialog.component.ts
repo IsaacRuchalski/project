@@ -39,8 +39,8 @@ export class AddDialogComponent implements OnInit {
 
 			if (instrument !== undefined) {
 
-				console.log(instrument)
-				console.log(instrument.name + " ajouté avec succès !")
+			/*	console.log(instrument)
+				console.log(instrument.name + " ajouté avec succès !")*/
 
 			}
 

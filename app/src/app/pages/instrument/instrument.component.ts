@@ -19,7 +19,7 @@ export class InstrumentComponent implements OnInit, OnChanges {
 
 	constructor(private InstrumentService: InstrumentService, public authService: AuthServiceService, private dialog: MatDialog, private router: Router) {
 		if (this.authService !== null) {
-			console.log(this.authService.isVerified())
+		//	console.log(this.authService.isVerified())
 		}
 
 	}
