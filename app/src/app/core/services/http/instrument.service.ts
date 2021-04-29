@@ -25,7 +25,7 @@ export class InstrumentService {
 
     var body = instrument;
     
-    console.log(instrument);
+    //console.log(instrument);
     return this.http.put<Instrument>("https://evening-brushlands-19063.herokuapp.com/instruments/"+instrument.id, body)
 
   }
