@@ -19,6 +19,7 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatInputModule} from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
 @NgModule({
   declarations: [
     FamillePipe, ResumePipe, CountryTradPipe, FilterPipe
@@ -44,7 +45,8 @@ import {MatInputModule} from "@angular/material/input";
     MatDialogModule,
     MatMenuModule,
     MatExpansionModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule
   ]
 })
 export class SharedModule {}
