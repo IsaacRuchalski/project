@@ -11,7 +11,7 @@ import {AngularFirestoreModule} from "@angular/fire/firestore";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MapComponent} from "./pages/map/map.component";
 
-import {DescriptionComponent} from "./description/description.component";
+import {DescriptionComponent} from "./pages/description/description.component";
 import {SharedModule} from "./shared/shared.module";
 import {environment} from "src/environments/environment";
 import { InstrumentDetailsComponent } from "./pages/instrument-details/instrument-details.component";

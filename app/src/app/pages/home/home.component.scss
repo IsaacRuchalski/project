@@ -1,0 +1,38 @@
+
+
+//background-image: url("https://ma-hub.imgix.net/wp-images/2019/05/04185051/royalty-free-music-Background.jpg") !important;
+#background {
+
+width: 100vw;
+height: 85vh;
+
+background-image: url("https://ma-hub.imgix.net/wp-images/2019/05/04185051/royalty-free-music-Background.jpg");
+background-size: cover;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
+#titre {
+
+position: absolute;
+left: 10%;
+top: 45%;
+
+color: var(--main-background);
+    h1 {
+        
+        font-family: "Itim";
+        font-size: 5em;
+        line-height: 1em;
+        background-color: var(--main-txt);
+        
+    }
+
+    p {
+        font-family: "Itim";
+        background-color: var(--main-txt);
+
+    }
+}

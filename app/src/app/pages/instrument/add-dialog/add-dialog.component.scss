@@ -1,0 +1,48 @@
+form{
+
+display:flex;
+flex-direction: column;
+color: white;
+align-items: center;
+
+
+}
+
+form h2{
+
+    font-family: 'Itim';
+
+}
+mat-form-field {
+
+width: 90%;
+
+}
+
+form p {
+
+
+    width: 90%;
+    margin: 1em 0 1em 0;
+
+}
+
+button {
+
+width: 50%;
+
+}
+
+::ng-deep #cdk-overlay-0 *{
+
+
+max-width: 50vw;
+max-height: 95vh;
+}
+
+
+::ng-deep .mat-option-text {
+
+color: white;
+
+}

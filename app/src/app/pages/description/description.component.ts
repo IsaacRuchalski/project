@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from "@angular/core";
 
 import {Observable} from "rxjs";
-import {WikipediaService} from "../core/services/http/wikipedia.service";
+import {WikipediaService} from "../../core/services/http/wikipedia.service";
 
 export interface Tile {
   color: string;

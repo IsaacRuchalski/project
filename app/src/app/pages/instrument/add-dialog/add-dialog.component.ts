@@ -12,40 +12,39 @@ import { InstrumentService } from 'src/app/core/services/http/instrument.service
 })
 export class AddDialogComponent implements OnInit {
 
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    description: '',
-    img: '',
-    familleId: '',
-    origin: '',
-    wikiSearch:''
+	checkoutForm = this.formBuilder.group({
+		name: '',
+		description: '',
+		img: '',
+		familleId: '',
+		origin: '',
+		wikiSearch: ''
 
-  });
+	});
 
-  public familles$: Observable<Famille[]>;
+	public familles$: Observable < Famille[] > ;
 
-  constructor(private formBuilder: FormBuilder, private instrumentService: InstrumentService, private dialog: MatDialog) { }
+	constructor(private formBuilder: FormBuilder, private instrumentService: InstrumentService, private dialog: MatDialog) {}
 
-  ngOnInit(): void {
+	ngOnInit(): void {
 
-    this.familles$ = this.instrumentService.getFamilles()
-  }
-
-
-  onSubmit(){
-
-    this.instrumentService.addInstrument(this.checkoutForm.value).subscribe((instrument:Instrument) => {
+		this.familles$ = this.instrumentService.getFamilles()
+	}
 
 
-      if(instrument !== undefined){
+	onSubmit() {
 
-        console.log(instrument)
-        console.log(instrument.name+" ajouté avec succès !")
-
-      }
+		this.instrumentService.addInstrument(this.checkoutForm.value).subscribe((instrument: Instrument) => {
 
 
-    }
-    );
-  }
+			if (instrument !== undefined) {
+
+				console.log(instrument)
+				console.log(instrument.name + " ajouté avec succès !")
+
+			}
+
+
+		});
+	}
 }

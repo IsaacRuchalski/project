@@ -1,63 +1,59 @@
-
 <div id="searchbar" fxLayout="row wrap" fxLayoutAlign="space-between center" *ngIf="this.authService.isLoggedIn() && (this.authService.isVerified() || this.authService.isUserAnonymousLoggedIn)">
   <input
-    id="search"
-    placeholder="Rechercher un instrument ..."
-    [(ngModel)]="search"
-    type="search"
-    (keyup)="onKey($event)"
+  id="search"
+  placeholder="Rechercher un instrument ..."
+  [(ngModel)]="search"
+  type="search"
+  (keyup)="onKey($event)"
   />
-
   <div id = "right-side">
-
-    <button mat-icon-button aria-label="" id = "add-icon" *ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
-      <mat-icon (click)="addInstrument()" >add</mat-icon>
-      
-    </button>
-  <mat-paginator
-    [length]="instruments.length"
-    [pageSize]="12"
-    (page)="getPaginatorData($event)"
-    [pageSizeOptions]="[8, 12, 25, 100]"
-  ></mat-paginator>
-
-</div>
+     <button mat-icon-button aria-label="" id = "add-icon" *ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
+        <mat-icon (click)="addInstrument()" >add</mat-icon>
+     </button>
+     <mat-paginator
+     [length]="instruments.length"
+     [pageSize]="12"
+     (page)="getPaginatorData($event)"
+     [pageSizeOptions]="[8, 12, 24, 100]"
+     ></mat-paginator>
+  </div>
 </div>
 <div
   fxLayout="row wrap"
   fxLayoutGap="20px grid"
   *ngIf="instruments && this.authService.isLoggedIn() && (this.authService.isVerified() || this.authService.isUserAnonymousLoggedIn)"
   id="grid"
->
-  <div
-    fxFlex="25%"
-    fxFlex.md="33"
-    fxFlex.sm="50"
-    fxFlex.xs="100"
-    *ngFor="
-      let instrument of instruments | filter: search | slice: lowValue:highValue
-    "
   >
-    <mat-card routerLink="/instruments/{{ instrument.name }}">
-      
-      <mat-card-header>
-        <mat-card-title>{{ instrument.name | titlecase }}<p id = "number">#{{instrument.id}}</p></mat-card-title>
-
-        <mat-card-subtitle>{{
-          instrument.familleId | famille
-        }}</mat-card-subtitle>
-      </mat-card-header>
-      <img
-        mat-card-image
-        src="{{ instrument.img }}"
-        alt="{{ instrument.name }}"
-        class="image"
-      />
-      <mat-card-content>
-        <p>{{ instrument.description | resume }}</p>
-      </mat-card-content>
-    </mat-card>
+  <div
+     fxFlex="25%"
+     fxFlex.md="33"
+     fxFlex.sm="50"
+     fxFlex.xs="100"
+     *ngFor="
+     let instrument of instruments | filter: search | slice: lowValue:highValue
+     "
+     >
+     <mat-card routerLink="/instruments/{{ instrument.name }}">
+        <mat-card-header>
+           <mat-card-title>
+              {{ instrument.name | titlecase }}
+              <p id = "number">#{{instrument.id}}</p>
+           </mat-card-title>
+           <mat-card-subtitle>{{
+              instrument.familleId | famille
+              }}
+           </mat-card-subtitle>
+        </mat-card-header>
+        <img
+           mat-card-image
+           src="{{ instrument.img }}"
+           alt="{{ instrument.name }}"
+           class="image"
+           />
+        <mat-card-content>
+           <p>{{ instrument.description | resume }}</p>
+        </mat-card-content>
+     </mat-card>
   </div>
 </div>
-  <app-log-not-found *ngIf="!this.authService.isLoggedIn()  || (!this.authService.isUserAnonymousLoggedIn && !this.authService.isVerified())" ></app-log-not-found>
-
+<app-log-not-found *ngIf="!this.authService.isLoggedIn()  || (!this.authService.isUserAnonymousLoggedIn && !this.authService.isVerified())" ></app-log-not-found>

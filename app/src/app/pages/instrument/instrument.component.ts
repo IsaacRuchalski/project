@@ -11,54 +11,55 @@ import { AddDialogComponent } from "./add-dialog/add-dialog.component";
 import { Router } from "@angular/router";
 
 @Component({selector: "app-instrument", templateUrl: "./instrument.component.html", styleUrls: ["./instrument.component.scss"]})
-export class InstrumentComponent implements OnInit,OnChanges {
-  @ViewChild(MatPaginator)paginator: MatPaginator;
-  public search: string = "";
-  instruments: Instrument[] = [];
-  instruments$: Observable<Instrument[]> = this.InstrumentService.get();
+export class InstrumentComponent implements OnInit, OnChanges {
+	@ViewChild(MatPaginator) paginator: MatPaginator;
+	public search: string = "";
+	instruments: Instrument[] = [];
+	instruments$: Observable < Instrument[] > = this.InstrumentService.get();
 
-  constructor(private InstrumentService : InstrumentService, public authService : AuthServiceService, private dialog: MatDialog, private router: Router) {
-    if(this.authService!== null){ 
-    console.log(this.authService.isVerified())}
+	constructor(private InstrumentService: InstrumentService, public authService: AuthServiceService, private dialog: MatDialog, private router: Router) {
+		if (this.authService !== null) {
+			console.log(this.authService.isVerified())
+		}
 
-  }
+	}
 
-  public lowValue = 0;
-  public highValue = 12;
-  ngOnInit(): void {
-    this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
-  }
+	public lowValue = 0;
+	public highValue = 12;
+	ngOnInit(): void {
+		this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
+	}
 
-  public getPaginatorData(event : PageEvent): PageEvent {
-    this.lowValue = event.pageIndex * event.pageSize;
-    this.highValue = this.lowValue + event.pageSize;
-    return event;
-  }
+	public getPaginatorData(event: PageEvent): PageEvent {
+		this.lowValue = event.pageIndex * event.pageSize;
+		this.highValue = this.lowValue + event.pageSize;
+		return event;
+	}
 
-  public onKey(event : any) {
-    console.log(event.target.value);
-    this.paginator.pageIndex = 0;
-    this.lowValue = 0;
-    this.highValue = 12;
-  }
+	public onKey(event: any) {
+		console.log(event.target.value);
+		this.paginator.pageIndex = 0;
+		this.lowValue = 0;
+		this.highValue = 12;
+	}
 
-  addInstrument(){
+	addInstrument() {
 
-    const dialogRef = this.dialog.open(AddDialogComponent)
-    .afterClosed().subscribe(
+		const dialogRef = this.dialog.open(AddDialogComponent)
+			.afterClosed().subscribe(
 
-      () => {
-        window.location.reload()
-       }
-       );
- 
-  }
+				() => {
+					window.location.reload()
+				}
+			);
 
-  ngOnChanges(){
+	}
 
-    this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
-    location.reload();
+	ngOnChanges() {
 
-  }
-  //public getSearchData(search)
+		this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
+		location.reload();
+
+	}
+	//public getSearchData(search)
 }
