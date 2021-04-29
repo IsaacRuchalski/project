@@ -1,13 +1,13 @@
 import {Component, OnInit, ViewEncapsulation} from "@angular/core";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Location} from "@angular/common";
-import {InstrumentService} from "../core/services/http/instrument.service";
-import {Instrument} from "../core/models/instrument";
+import {InstrumentService} from "../../core/services/http/instrument.service";
+import {Instrument} from "../../core/models/instrument";
 import {Observable} from "rxjs";
-import {WikipediaService} from "../core/services/http/wikipedia.service";
-import {CountryService} from "../core/services/http/country.service";
+import {WikipediaService} from "../../core/services/http/wikipedia.service";
+import {CountryService} from "../../core/services/http/country.service";
 import {map} from "rxjs/operators";
-import {AuthServiceService} from "../core/services/firebase/auth-service.service";
+import {AuthServiceService} from "../../core/services/firebase/auth-service.service";
 
 
 @Component({selector: "app-instrument-details", templateUrl: "./instrument-details.component.html", styleUrls: ["./instrument-details.component.scss"]})
@@ -28,16 +28,17 @@ export class InstrumentDetailsComponent implements OnInit {
   public descriptionWiki
   public id;
   public img;
-  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService, public countryService : CountryService, public authService : AuthServiceService) {}
+  constructor(private route : ActivatedRoute, private location : Location, private instrumentService : InstrumentService, private wikipedia : WikipediaService, public countryService : CountryService, public authService : AuthServiceService, private router: Router) {}
 
   wikipediaDescription;
   ngOnInit(): void {
+    
     this.getInstrument();
   }
 
   getInstrument(): void {
     const id = this.route.snapshot.paramMap.get("id");
-
+    
     this.instrumentService.getInstrument(id).subscribe((instrument) => {
       
       this.img = instrument[0].img;
@@ -86,7 +87,7 @@ export class InstrumentDetailsComponent implements OnInit {
       name: this.nom,
       description: this.desc,
       img: this.img,
-      origin: this.origine,
+      origin: this.origine.charAt(0).toUpperCase() + this.origine.slice(1),
       familleId: this.formattedFamille(this.familleId),
       wikiSearch: this.descriptionWiki
 
@@ -95,8 +96,38 @@ export class InstrumentDetailsComponent implements OnInit {
     }
 
     
-    this.instrumentService.modifyInstrument(instr);
+    this.instrumentService.modifyInstrument(instr).subscribe((instrument: Instrument) => {
 
+      this.img = instrument[0].img;
+      this.instrument = instrument[0];
+      this.nom = instrument.name;
+      this.desc = instrument.description;
+      this.origine = instrument.origin;
+      this.descriptionWiki = instrument.wikiSearch;
+      this.familleId = this.formattedFamilleToTxt(instrument.familleId);
+
+ 
+
+
+    });
+    
+    this.router.navigate(["/instruments/"+this.nom]);  
+
+    setTimeout(() => {
+      location.reload(); 
+    }, 500);
+ 
+    
+    
+  }
+
+  deleteInstrument(id){
+
+
+    this.instrumentService.deleteInstrument(id).subscribe();
+
+
+this.router.navigate(["/instruments"]);  
 
   }
 

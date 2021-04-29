@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthPageComponent } from 'src/app/auth-page/auth-page.component';
+import { AuthPageComponent } from 'src/app/pages/auth-page/auth-page.component';
 
 @Component({
   selector: 'app-log-not-found',

@@ -1,11 +1,11 @@
 import {Component, OnInit, ViewChild} from "@angular/core";
-import {Instrument} from "../core/models/instrument";
+import {Instrument} from "../../core/models/instrument";
 import {Observable, of} from "rxjs";
-import {InstrumentService} from "../core/services/http/instrument.service";
+import {InstrumentService} from "../../core/services/http/instrument.service";
 import {map} from "rxjs/operators";
-import {CountryComponent} from "../core/components/country/country.component";
+import {CountryComponent} from "../../core/components/country/country.component";
 import {MatPaginator, MatPaginatorModule, PageEvent} from "@angular/material/paginator";
-import {AuthServiceService} from "../core/services/firebase/auth-service.service";
+import {AuthServiceService} from "../../core/services/firebase/auth-service.service";
 
 @Component({selector: "app-instrument", templateUrl: "./instrument.component.html", styleUrls: ["./instrument.component.scss"]})
 export class InstrumentComponent implements OnInit {

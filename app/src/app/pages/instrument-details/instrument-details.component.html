@@ -36,18 +36,33 @@
           <app-traduction *ngIf="!this.isInEditMode" [country]="instrument.origin"></app-traduction>
           <app-country *ngIf="!this.isInEditMode" [name]="instrument.origin"></app-country>
           
-            <input *ngIf="this.isInEditMode"
+            <input  *ngIf="this.isInEditMode"
             [(ngModel)] = "origine"
             placeholder="{{instrument.origin}}"
             type="text" />
             
         </section>
       </div>
-     
-        <button mat-icon-button aria-label="" id = "edit-icon" *ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
+     <div *ngIf="this.authService.isUserAnonymousLoggedIn" id = "edit-anon">
+       <p>Instrument non-modifiable <br />car vous êtes anonyme</p>
+      <button mat-icon-button disabled aria-label="" id = "edit-icon">
+        <mat-icon>edit_off</mat-icon>
+      </button>
+
+    </div>
+
+    <div id = "edit-anon"*ngIf="!this.authService.isUserAnonymousLoggedIn && this.authService.isLoggedIn()">
+
+      <button mat-icon-button aria-label="" id = "edit-icon" *ngIf="!isInEditMode">
+        <mat-icon  (click)="deleteInstrument(instrument.id)">close</mat-icon>
+        
+      </button>
+        <button mat-icon-button aria-label="" id = "edit-icon" >
           <mat-icon *ngIf="!isInEditMode" (click)="toggleEditMode()">mode_edit</mat-icon>
           <mat-icon *ngIf="isInEditMode" (click)="toggleEditMode()" (click) = "modifyInstrument(instrument.id)">done</mat-icon>
         </button>
+
+    </div>
       </mat-card-subtitle>
 
    
@@ -85,7 +100,8 @@
       </mat-card-content>
 
       <mat-card-content *ngIf="isInEditMode">
-        <input *ngIf="this.isInEditMode"
+        <label for="wiki">Terme de recherche wikipedia</label>
+        <input name = "wiki" *ngIf="this.isInEditMode"
         [(ngModel)] = "descriptionWiki"
         placeholder="{{instrument.wikiSearch}}"
         type="text" />

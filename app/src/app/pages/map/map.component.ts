@@ -6,11 +6,11 @@ import * as L from "leaflet";
 import {Observable} from "rxjs";
 import {ComplexOuterSubscriber} from "rxjs/internal/innerSubscribe";
 import {timeout} from "rxjs/operators";
-import {Instrument} from "../core/models/instrument";
-import {CountryService} from "../core/services/http/country.service";
-import {InstrumentService} from "../core/services/http/instrument.service";
-import {PopupService} from "../core/services/http/popup.service";
-import {ShapeService} from "../core/services/map/shape.service";
+import {Instrument} from "../../core/models/instrument";
+import {CountryService} from "../../core/services/http/country.service";
+import {InstrumentService} from "../../core/services/http/instrument.service";
+import {PopupService} from "../../core/services/http/popup.service";
+import {ShapeService} from "../../core/services/map/shape.service";
 
 @Component({selector: "app-map", templateUrl: "./map.component.html", styleUrls: ["./map.component.scss"]})
 export class MapComponent implements AfterViewInit {

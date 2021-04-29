@@ -87,6 +87,7 @@ mat-card:hover mat-card-content {
 
 mat-card-title {
   color: var(--main-background);
+  display: flex;
 }
 
 mat-card-content {
@@ -99,3 +100,39 @@ mat-card-content {
   height: 120px; /* adjust as needed */
   object-fit: contain;
 }
+
+#number {
+margin-left: auto;
+color: #555;
+font-size: 0.75em;
+
+}
+
+::ng-deep .mat-card-header-text{
+
+width: 100%;
+
+
+}
+
+#right-side {
+
+
+display: flex;
+align-items: center;
+
+}
+
+#add-icon {
+
+
+color: rgba(255, 255, 255, .7);
+
+}
+
+#add-icon:hover {
+
+
+  color: var(--main-background);
+  
+  }

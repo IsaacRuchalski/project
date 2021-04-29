@@ -104,3 +104,23 @@ input {
 padding: 10px;
 margin: 0.5em;
 }
+
+#edit-anon {
+
+display: flex;
+flex-direction: row;
+
+}
+
+#edit-anon p {
+
+margin-right: 1em;
+font-size: 1em;
+}
+
+#edit-icon:hover {
+
+    color: var(--main-background)
+
+
+}
