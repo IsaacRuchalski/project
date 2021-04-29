@@ -31,3 +31,7 @@ Vous pouvez ensuite pour connecter et/ou vous inscrire.
 #### Non connecté:
 
 ![non connecte](https://i.postimg.cc/x1Ggf72j/non-co.png)
+
+* ![#ffa89e](Ne peut pas accéder à la recherche d'instruments) `#ffa89e`
+* Peut accéder à la carte
+* Ne peut pas éditer, supprimer, ou ajouter des éléments
