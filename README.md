@@ -22,4 +22,4 @@ InstruFinder utilise plusieurs librairies :
 
 Pour se connecter, 2 possibilités : 
 
-![Connexion](https://i.ibb.co/Xzptyjr/Connexion.png)
+![Connexion](https://i.postimg.cc/dtfcRhkZ/Connexion.png)
