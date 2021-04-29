@@ -18,8 +18,16 @@ InstruFinder utilise plusieurs librairies :
 
 ## Application
 
-### Connexion
+### Authentification
 
 Pour se connecter, 2 possibilités : 
 
 ![Connexion](https://i.postimg.cc/dtfcRhkZ/Connexion.png)
+
+Vous pouvez ensuite pour connecter et/ou vous inscrire.
+
+### Statuts d'authentification
+
+#### Non connecté:
+
+![non connecte](https://i.postimg.cc/x1Ggf72j/non-co.png)
