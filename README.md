@@ -56,6 +56,24 @@ Une fois inscrit, vous devrez valider votre email, et vous pourrez ensuite vous 
 * \+ Peut accéder à la recherche d'instruments
 * \+ Peut éditer, supprimer, ou ajouter des éléments
 
-### Problèmes connus
+## Problèmes connus
 
-Si l'URL de l'image que vous ajoutez lors de l'ajout d'instrument utilise le protocole HTTP et non HTTPS, celle-ci risque de ne pas s'afficher, car Firebase n'accepte que le protocole HTTPS. Après avoir testé sur 2 ordinateurs différents, l'image était visible sur l'ordinateur sur lequel l'instrument a été ajouté, mais ne l'était pas sur un autre ordinateur. L'instrument était ajouté, mais l'image n'était pas générée. Remplacer HTTP par HTTPS dans l'URL règle le problème.
+Si l'URL de l'image que vous ajoutez lors de l'ajout d'instrument utilise le protocole HTTP et non HTTPS, celle-ci risque de ne pas s'afficher, car Firebase n'accepte que le protocole HTTPS. Après avoir testé sur 2 ordinateurs différents, l'image était visible sur l'ordinateur sur lequel l'instrument a été ajouté, mais ne l'était pas sur un autre ordinateur. L'instrument était ajouté, mais l'image n'était pas générée. Remplacer HTTP par HTTPS dans l'URL règle le problème, mais uniquement pour la personne ayant créé l'instrument.
+
+Il se peut que vous ayez une erreur 403, car l'accès à la ressource est interdit pour les autres... 
+
+![ressource interdite](https://i.postimg.cc/4x262Kbh/Screenshot-551.png)
+
+Faites donc attention à ce que le site sur lequel vous allez chercher une image utilise le protocole HTTPS et/ou que l'accès aux images est autorisé !
+
+Exemple de sites qui proposent des fichiers .png au travers du protocole https : 
+
+- [purepng.com](https://purepng.com/)
+- [freepngimg.com](https://freepngimg.com/)
+
+Exemples d'URL fonctionnelles : 
+
+- [https://purepng.com/public/uploads/large/black-didgeridoo-with-patterns-khm.png](https://purepng.com/public/uploads/large/black-didgeridoo-with-patterns-khm.png) (Didjeridoo)
+- [https://freepngimg.com/thumb/trombone/2-2-trombone-png-clipart-thumb.png](https://freepngimg.com/thumb/trombone/2-2-trombone-png-clipart-thumb.png) (Trombone)
+
+
