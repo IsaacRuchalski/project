@@ -55,3 +55,7 @@ Une fois inscrit, vous devrez valider votre email, et vous pourrez ensuite vous 
 * \+ Peut accéder à la carte
 * \+ Peut accéder à la recherche d'instruments
 * \+ Peut éditer, supprimer, ou ajouter des éléments
+
+### Problèmes connus
+
+Si l'URL de l'image que vous ajoutez lors de l'ajout d'instrument utilise le protocole HTTP et non HTTPS, celle-ci risque de ne pas s'afficher, car Firebase n'accepte que le protocole HTTPS. Après avoir testé sur 2 ordinateurs différents, l'image était visible sur l'ordinateur sur lequel l'instrument a été ajouté, mais ne l'était pas sur un autre ordinateur. L'instrument était ajouté, mais l'image n'était pas générée. Remplacer HTTP par HTTPS dans l'URL règle le problème.
