@@ -31,7 +31,9 @@ export class AddDialogComponent implements OnInit {
 		this.familles$ = this.instrumentService.getFamilles()
 	}
 
-
+/**
+ * Méthode appelée lors du submit du formulaire. Celle-ci va récupérer les inputs et générer un instrument
+ */
 	onSubmit() {
 
 		this.instrumentService.addInstrument(this.checkoutForm.value).subscribe((instrument: Instrument) => {
@@ -39,8 +41,6 @@ export class AddDialogComponent implements OnInit {
 
 			if (instrument !== undefined) {
 
-			/*	console.log(instrument)
-				console.log(instrument.name + " ajouté avec succès !")*/
 
 			}
 

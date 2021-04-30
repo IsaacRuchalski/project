@@ -53,7 +53,7 @@ export class InstrumentDetailsComponent implements OnInit {
 	}
 
 	formatWiki(desc: string) {
-	//	console.log("DESC : " + desc.length)
+	
 		if (desc === "Pas de description wikipedia" || desc.length == 0) {
 			this.descWiki = false;
 		}
@@ -73,7 +73,7 @@ export class InstrumentDetailsComponent implements OnInit {
 		}
 
 		this.isInEditMode = val;
-		//console.log(val)
+		
 
 		return val;
 

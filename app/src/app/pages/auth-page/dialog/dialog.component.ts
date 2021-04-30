@@ -10,21 +10,29 @@ export class DialogComponent implements OnInit {
   constructor(public authService : AuthServiceService, private router : Router) {}
 
   ngOnInit(): void {}
-
+/**
+ * Signin en anonyme
+ */
   signInAnon() {
     this.authService.anonymousLogin().then();
   }
-
+/**
+ * Signin 
+ */
   signIn() {
     this.authService.login(this.mail, this.pwd).then();
   }
-
+/**
+ * Insription
+ */
   signUp() {
     this.authService.signUp(this.mail, this.pwd).then();
   }
-
+/**
+ * Déconnexion
+ */
   signOut() {
     this.authService.signOut();
   }
-  logIn() {}
+  
 }

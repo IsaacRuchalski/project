@@ -12,6 +12,9 @@ export class HeaderComponent implements OnInit {
     
   }
 
+  /**
+   * Le header contient un dialog sur un menu
+   */
   openDialog() {
     const dialogRef = this.dialog.open(AuthPageComponent, {restoreFocus: false});
   }

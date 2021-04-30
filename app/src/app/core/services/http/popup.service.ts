@@ -15,6 +15,14 @@ export class PopupService {
     this.instrs = [];
   }
 
+  /**
+   * Va créer une popup Leaflet.js au contact de la map.
+   * Le souci des popups de Leaflet.js, c'est qu'elles n'acceptent pas les composants Angular.
+   * Je dois donc décrire leur HTML/CSS plus bas, dans une chaîne de caractères. Ce n'est pas beau, mais c'est fonctionnel ! :D
+   * @param name le nom du pays cible
+   * @param instruments Les instruments correspondants
+   * @returns une chaîne de caractères d'HTML CSS comprenant la popup entière
+   */
   makePopup(name : string, instruments : Instrument[]): string {
     var html: string = "<h3>" + name + "</h3>";
     html += "<div id = 'grid'>";
@@ -47,30 +55,3 @@ export class PopupService {
     return html;
   }
 }
-
-/*
-
- makePopup(name : any): string {
-        var html = "";
-    name.forEach((instrument : Instrument) => {
-      html += instrument.name;
-    });
-
-    this.procPromise(name);
-    console.log("HTML APRES " + this.html);
-    return name + this.html;
-  }
-
-  procPromise(name : string): void {
-    this.makePromise(name).then((instruments) => {
-      instruments.forEach((instrument : Instrument) => {
-        this.html += instrument.name;
-      });
-    });
-  }
-
-  makePromise(name : string): Promise<any> {
-    return new Promise((resolve, reject) => {
-      this.instrumentService.getByOrigin(name).subscribe((instruments) => resolve(instruments));
-    });
-  }*/

@@ -8,6 +8,13 @@ export class TraductionComponent implements OnInit {
   public isFound: boolean = false;
   public pays: string;
   @Input()country: string;
+
+  /**
+   * Ce composant sert uniquement à la traduction. Puisque qu'une Observable dans un pipe est une mauvaise idée, j'utilise un composant.
+   * Ce composant va récupérer la traduction française des noms de pays anglais sur l'API RestCountries.
+   * Quelques soucis: Certains pays ont une traduction approximative. Par exemple , "India" est traduit "Territoire britannique de l'océan indien" et non Inde.
+   * Mais cela n'est pas de mon ressort, mais du ressort des devs de l'API.
+   */
   ngOnInit(): void {
     if (this.country !== undefined) {
       if (this.country == "South Korea") 

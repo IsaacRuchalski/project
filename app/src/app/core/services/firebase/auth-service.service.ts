@@ -15,6 +15,9 @@ export class AuthServiceService {
     
   }
 
+  /**
+   * Vérifie si l'utilisateur est connecté en anonyme
+   */
   get isUserAnonymousLoggedIn() {
     var val: boolean;
     if (this.authState !== null) {
@@ -26,18 +29,28 @@ export class AuthServiceService {
     return val;
   }
 
+  /**
+   * Get l'ID de l'utilisateur actuel
+   */
   get currentUserId(): string {
     return this.authState !== null
       ? this.authState.uid
       : "";
   }
-
+  /**
+  * Va récupérer l'email
+  * @returns l'email, ou ""
+  */
   get currentUserEmail(): string {
     return this.authState !== null
       ? this.authState.email
       : "";
   }
 
+  /**
+   * Vérifie si l'utilisateur est connecté et que son email a été vérifiée.
+   * @returns un booléen , vrai si connecté, faux sinon
+   */
   isLoggedIn() {
     var val: boolean;
     
@@ -52,14 +65,20 @@ export class AuthServiceService {
 
   return val;
   }
-
+  /**
+   * sert à vérifier si l'utilisateur a vérifié ses mails
+   * @returns Un booléen qui check la vérification d'email
+   */
   isVerified(){
 
     if(this.authState != null){
     return this.authState.emailVerified;
     }
   }
-
+  /**
+   * Permet à l'utilisateur de se connecter en anonyme ur Firebase
+   * @returns Une Promise 
+   */
   anonymousLogin() {
     return this.afAuth.signInAnonymously().then((user) => {
       
@@ -69,6 +88,12 @@ export class AuthServiceService {
     }).catch((error) => console.log(error));
   }
 
+  /**
+   * Permet de se connecter avec mail et mot de passe, après que l'email a été vérifiée.
+   * @param mail l'adresse mail
+   * @param password le mot de passe
+   * @returns une Promise
+   */
   login(mail, password) {
     return this.afAuth.signInWithEmailAndPassword(mail, password).then((user) => {
       
@@ -83,7 +108,12 @@ export class AuthServiceService {
     }
     }).catch((error) => console.log(error));
   }
-
+  /**
+   * Permet de créer un utilisateur sur Firebase et d'envoyer un mail de vérification
+   * @param mail l'email
+   * @param password  le mot de passe
+   * @returns une promise
+   */
   signUp(mail, password) {
     return this.afAuth.createUserWithEmailAndPassword(mail, password).then((user) => {
 
@@ -98,11 +128,21 @@ export class AuthServiceService {
 
       }
     }).catch((error) => console.log(error));
+
+
   }
+
+  /**
+   * Déconnecté l'utilisateur de Firebase
+   * @returns Une promise
+   */
   signOut() {
     return this.afAuth.signOut().then(() => {});
   }
 
+  /**
+   * Unsubscribe à l'authentification Firebase
+   */
   ngOnDestroy() {
     this.sub.authState.unsubscribe();
   }

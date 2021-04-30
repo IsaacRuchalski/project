@@ -38,11 +38,12 @@ export class DescriptionComponent implements OnInit {
     var count = 0;
     var pos = description.indexOf(searchFor);
 
-    /*     console.log(count);
-    console.log(description); */
     return description;
   }
-
+/**
+ * l'output pour récupérer la description dans le parent.
+ * @param value la desc
+ */
   addNewItem(value : string) {
     this.newItemEvent.emit(value);
   }

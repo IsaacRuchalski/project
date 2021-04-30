@@ -19,7 +19,7 @@ export class InstrumentComponent implements OnInit, OnChanges {
 
 	constructor(private InstrumentService: InstrumentService, public authService: AuthServiceService, private dialog: MatDialog, private router: Router) {
 		if (this.authService !== null) {
-		//	console.log(this.authService.isVerified())
+		
 		}
 
 	}
@@ -29,7 +29,11 @@ export class InstrumentComponent implements OnInit, OnChanges {
 	ngOnInit(): void {
 		this.InstrumentService.get().subscribe((instruments) => (this.instruments = instruments));
 	}
-
+/**
+ * Requis avec le paginateur, cette méthode est très pratique , car elle va permettre grâce à un filtre de mettre en place le paginateur.
+ * @param event l'événement
+ * @returns un PageEvent
+ */
 	public getPaginatorData(event: PageEvent): PageEvent {
 		this.lowValue = event.pageIndex * event.pageSize;
 		this.highValue = this.lowValue + event.pageSize;
@@ -37,7 +41,7 @@ export class InstrumentComponent implements OnInit, OnChanges {
 	}
 
 	public onKey(event: any) {
-		console.log(event.target.value);
+		
 		this.paginator.pageIndex = 0;
 		this.lowValue = 0;
 		this.highValue = 12;

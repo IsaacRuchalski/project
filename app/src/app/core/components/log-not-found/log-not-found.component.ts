@@ -14,6 +14,9 @@ export class LogNotFoundComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Cette page est générée quand un utilisateur essaie d'accéder à une page à laquelle il ne peut pas accéder. Le bouton Se Connecter ouvre la boîte de dialog
+   */
   openDialog() {
     const dialogRef = this.dialog.open(AuthPageComponent, {restoreFocus: false});
   }

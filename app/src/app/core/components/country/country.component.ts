@@ -11,7 +11,11 @@ export class CountryComponent implements OnInit {
   public flag !: string;
   @Input()name: string;
   constructor(private countryService : CountryService) {}
-
+/**
+ * Ce component va gérer le drapeau, en utilisant CountryService pour afficher le drapeau correspondant à un nom de pays demandé.
+ * Ici, il y a une gestion de cas particuliers , par exemple la Corée du Sud est appelée "Korea (Republic of)" sur l'API RestCountries.
+ * Il faut donc gérer les cas où l'utilisateur va par exemple noter "South Korea"
+ */
   ngOnInit(): void {
     if (this.name !== undefined) {
       if (this.name == "South Korea") 
