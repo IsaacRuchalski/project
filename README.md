@@ -55,7 +55,3 @@ Une fois inscrit, vous devrez valider votre email, et vous pourrez ensuite vous 
 * \+ Peut accéder à la carte
 * \+ Peut accéder à la recherche d'instruments
 * \+ Peut éditer, supprimer, ou ajouter des éléments
-
-#### Problèmes connus
-
-Firebase ouvre une session différente à chaque utilisation. Ce qui signifie que si un utilisateur ajoute un lien vers une image lors de l'ajout d'un instrument, pour une raison qui m'échappe, cette image ne sera fonctionnelle que pour la personne l'ayant ajouté.
