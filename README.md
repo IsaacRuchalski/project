@@ -68,5 +68,5 @@ Faites donc attention à ce que le site sur lequel vous allez chercher une image
 
 Exemple de sites qui proposent des fichiers .png au travers du protocole https : 
 
-- [PurePNG](https://purepng.com/)
-- [Freepngimg](https://freepngimg.com/)
+- [purepng.com](https://purepng.com/)
+- [freepngimg.com](https://freepngimg.com/)
