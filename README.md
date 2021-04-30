@@ -70,3 +70,10 @@ Exemple de sites qui proposent des fichiers .png au travers du protocole https :
 
 - [purepng.com](https://purepng.com/)
 - [freepngimg.com](https://freepngimg.com/)
+
+Exemples d'URL fonctionnelles : 
+
+(https://purepng.com/public/uploads/large/black-didgeridoo-with-patterns-khm.png)[(https://purepng.com/public/uploads/large/black-didgeridoo-with-patterns-khm.png)] (Didjeridoo)
+(https://freepngimg.com/thumb/trombone/2-2-trombone-png-clipart-thumb.png)[https://freepngimg.com/thumb/trombone/2-2-trombone-png-clipart-thumb.png] (Trombone)
+
+
