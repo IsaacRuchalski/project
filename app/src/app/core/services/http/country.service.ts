@@ -17,7 +17,7 @@ export class CountryService {
    */
   getFlag(name : string): Observable<Country> {
     
-    return this.http.get<Country>("https://restcountries.eu/rest/v2/name/" + encodeURIComponent(name) + "?fields=flag");
+    return this.http.get<Country>("https://restcountries.com/v3.1/name/" + encodeURIComponent(name) + "?fields=flag");
   }
 
   /**
@@ -26,6 +26,6 @@ export class CountryService {
    * @returns une observable avec toutes les traductions
    */
   getTraduction(country : string): Observable<Object> {
-    return this.http.get<Country>("https://restcountries.eu/rest/v2/name/" + encodeURIComponent(country) + "?fields=translations");
+    return this.http.get<Country>("https://restcountries.com/v3.1/name/" + encodeURIComponent(country) + "?fields=translations");
   }
 }
